@@ -2,15 +2,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: blueviolet;
+  background-color: transparent;
   height: 100px;
-  width: 100px;
+  width: 100%;
 }
 
 .nav-logo {
-  font-family: "Courier New", Courier, monospace;
-  border: solid 4px #0076bd;
-  border-radius: 1em;
+  font-family: 'Abril Fatface', cursive;
+  color: green;
+  padding-left: 2%;
+  font-size: 60px;
 }
 
 .nav-menu {
@@ -18,8 +19,10 @@
   align-items: center;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 1;
 }
+
+// test for git push again
 
 .nav-menu li {
   margin-right: 20px;
@@ -29,31 +32,45 @@
 .nav-btn2,
 .nav-btn3 {
   border: none;
-  background-color: transparent;
+  background-color: #0076bd;
   color: #fff;
   cursor: pointer;
   transition: all 0.2 ease-in-out;
 
   &:hover {
-    background-color: #555;
+    background-color: green;
   }
+}
+
+.i {
+  color: black;
+}
+
+.nav-btn1 {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: #0076bd;
+  color: #333;
 }
 
 .nav-btn2 {
   padding: 8px 16px;
   border-radius: 20px;
-  background-color: #fff;
+  background-color: #0076bd;
   color: #333;
 }
 
 .nav-btn3 {
-  position: relative;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: #0076bd;
+  color: #333;
 }
 
 .map-main-container {
   background-color: f2f2ea;
-  height: 100px;
-  width: 800px;
+  height: 300px;
+  width: 1100px;
   display: flex;
   flex-direction: row;
   align-items: end;
@@ -66,7 +83,20 @@
   color: #fff;
   cursor: pointer;
   transition: all 0.2 ease-in-out;
+  display: flex;
   justify-content: right;
+  padding: 20px;
+}
+
+button{
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: #0076bd;
+  color: #333;
+  &:hover {
+    background-color: green;
+  }
 }
 
 .available-map-container {
@@ -81,28 +111,22 @@
   padding: 10px;
 }
 
-.first-map {
-  border: solid black 2em;
-  height: 50px;
-  width: 50px;
+.first-map,
+.second-map,
+.third-map,
+.fourth-map {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.second-map {
-  border: solid black 2em;
+.first-map-picture,
+.second-map-picture,
+.third-map-picture,
+.fourth-map-picture{
+  border: solid #0076bd 2em;
+  background-color: transparent;
   height: 50px;
-  width: 50px;
+  width: 100px;
 }
-.third-map {
-  border: solid black 2em;
-  height: 50px;
-  width: 50px;
-}
-.four-map {
-  border: solid black 2em;
-  height: 50px;
-  width: 50px;
-}
-.five-map {
-  border: solid black 2em;
-  height: 50px;
-  width: 50px;
-}
+
