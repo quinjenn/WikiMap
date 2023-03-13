@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title>Home Page</title>
+    <title>Marker Clustering</title>
 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,29 +18,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
 
     <script src="/vendor/jquery-3.0.0.js"></script>
-    <script defer src="/scripts/app.js"></script>
+    <script type="module" src="/scripts/app.js"></script> 
+    <!-- Google Maps script for marker clustering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- Do I need to put in type="module" here for the gmaps api? -->
+    
   </head>
-
+  
   <body>
     <div class="layout-container">
          <div class="nav-bar">
-            <span class="nav-logo">JNMaps</span>
+           <span class="nav-logo">JNMaps</span>
             <ul class="nav-menu">
               <li><button class="nav-btn1">Homepage</button></li>
               <li><button type="submit"class="nav-btn2">Profile</button></li>
               <li><button class="nav-btn3">Favourites</button></li>
             </ul>
           </div>
-         <div class="map-whole-div">
+          <div class="map-whole-div">
           <div class="newMap-btn">
             <button type="submit">Create New Map <span>&#43;</span></button>
           </div>
          <div class="map-main-container">
             <!-- Create a map element for Google Maps -->
            <div id="map">
-            <script async
-              src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-            </script>
            </div>
           </div>
           </div>
@@ -61,18 +63,17 @@
                <p>Jasper Restaurants</p>
            </div>
          </div>
-
-
-
-
-
     </div>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=<%= process.env.API_KEY %>&callback=initMap&v=weekly"
+        defer
+      ></script>
 </body>
 
     <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"
     ></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
