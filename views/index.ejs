@@ -13,124 +13,30 @@
     <link rel="stylesheet" href="/styles/layout.css" />
     <link rel="stylesheet" href="/styles/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
- <!-- BOOTSTRAP CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
     <!-- FONT SCRIPT -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap" rel="stylesheet">
-
-
+    
     <script src="/vendor/jquery-3.0.0.js"></script>
+    
     <script type="module" src="/scripts/app.js"></script> 
     <!-- Google Maps script for marker clustering -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <!-- Do I need to put in type="module" here for the gmaps api? -->
-    
   </head>
-
-<!--NEW-MAP-MODAL-->
-<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel2">Create New Map</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Name:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Description:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
-           <div class="form-group">
-            <label for="message-text" class="col-form-label">Image:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!---->
-
-<!--PROFILE-MODAL-GRID-->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-4"></div>
-      <div class="col-md-4 ml-auto">Username</div>
-    </div>
-    </br>
-    <div class="row">
-      <div class="col-md-3 ml-auto">Avatar Image</div>
-      <div class="col-md-2 ml-auto"></div>
-    </div>
-    </br>
-    <div class="row">
-      <div class="col-sm-9">
-        <div class="row">
-          </br>
-          <div class="col-8 col-sm-6">
-            Favourites Maps
-          </div>
-          <div class="col-4 col-sm-6">
-            My Maps
-          </div>
-        </div>
-      </div>
-    <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-3 ml-auto">Map Image</div>
-    </div>
-    </div>
-  </div>
-</div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!---->
-
+  
   <body>
     <div class="layout-container">
          <div class="nav-bar">
            <span class="nav-logo">JNMaps</span>
             <ul class="nav-menu">
               <li><button class="nav-btn1">Homepage</button></li>
-              <li><button type="button" class="nav-btn2" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Profile</button></li>
+              <li><button type="submit"class="nav-btn2">Profile</button></li>
               <li><button class="nav-btn3">Favourites</button></li>
             </ul>
           </div>
           <div class="map-whole-div">
-          <div class="newMap-btn-div">
-            <button type="button" class="newMap-btn" data-toggle="modal" data-target="#exampleModal2" data-whatever="@getbootstrap">Create New Map</button>
+          <div class="newMap-btn">
+            <button type="submit">Create New Map <span>&#43;</span></button>
           </div>
          <div class="map-main-container">
           <!-- Implement Google search bar -->
@@ -145,27 +51,18 @@
            </div>
           </div>
           </div>
-          <div class="whole-available-map">
-          <div class="inline-text">
-            <h1>Explore popular cities</h1>
-            <span class="subheading">find the top-rated attractions, eats, and activities.</span>
-          </div>
          <div class="available-map-container">
           <div class="first-map">
             <div class="first-map-picture"></div>
-               <span class="img1">
-                <img src="https://cdn.britannica.com/71/94371-050-293AE931/Mountains-region-Ten-Peaks-Moraine-Lake-Alberta.jpg"></span>
-               <span>Banff</span>
+               <p>Banff </p>
            </div>
            <div class="second-map">
             <div class="second-map-picture"></div>
-              <span class="img2"><img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_360,q_65,w_360/v1/clients/vancouverbc/Stanley_Park_Aerial_2_e7b07092-f98f-406a-953b-c350f9a70402.jpg"></span>
-              <span>Vancouver</span>
+              <p>Banff Restaurants</p>
            </div>
            <div class="third-map">
             <div class="third-map-picture"></div>
-                <span class="img3"><img src="https://www.gostudycanada.com/wp-content/uploads/2021/02/iStock-472209533.jpg"></span>
-               <span>Ottawa</span>
+               <p>Jasper Attractions</p>
            </div>
            <div class="fourth-map">
             <div class="fourth-map-picture"></div>
@@ -173,11 +70,10 @@
            </div>
          </div>
     </div>
-    <script async
-        src="https://maps.googleapis.com/maps/api/js?key=<%= process.env.API_KEY %>&callback=initMap&v=weekly"
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=<%= process.env.API_KEY %>&libraries=places&callback=initMap&v=weekly"
         defer
       ></script>
-
 </body>
 
     <script
@@ -195,25 +91,5 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-  <!--PROFILE-MODAL-GRID-->
-    <script>$('#exampleModal2').on('show.bs.modal', function(event) {
-  var button = $(event.relatedTarget); // Button that triggered the modal
-  var recipient = button.data('whatever'); // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  var modal = $(this);
-  modal.find('.modal-title').text('Create New Map ');
-  modal.find('.modal-body input').val(recipient);
-}); </script>
-  <!--NEW-MAP-MODAL-->
-   <script>$('#exampleModal').on('show.bs.modal', function(event) {
-  var button = $(event.relatedTarget); // Button that triggered the modal
-  var recipient = button.data('whatever'); // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  var modal = $(this);
-  modal.find('.modal-title').text('Profile ');
-  modal.find('.modal-body input').val(recipient);
-}); </script>
   </body>
 </html>
