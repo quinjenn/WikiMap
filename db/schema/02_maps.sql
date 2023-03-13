@@ -1,0 +1,5 @@
+CREATE TABLE maps (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  user_id INTEGER REFERENCES users(id)
+);
