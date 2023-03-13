@@ -36,7 +36,7 @@
   transition: all 0.2 ease-in-out;
 
   &:hover {
-    background-color: #555;
+    background-color: green;
   }
 }
 
@@ -67,8 +67,8 @@
 
 .map-main-container {
   background-color: f2f2ea;
-  height: 100px;
-  width: 800px;
+  height: 300px;
+  width: 1100px;
   display: flex;
   flex-direction: row;
   align-items: end;
@@ -77,12 +77,24 @@
 }
 
 .newMap-btn {
-  position: relative;
   background-color: transparent;
   color: #fff;
   cursor: pointer;
   transition: all 0.2 ease-in-out;
+  display: flex;
   justify-content: right;
+  padding: 20px;
+}
+
+button{
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: #0076bd;
+  color: #333;
+  &:hover {
+    background-color: green;
+  }
 }
 
 .available-map-container {
