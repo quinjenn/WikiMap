@@ -1,38 +1,14 @@
-import { MarkerClusterer } from "@googlemaps/markerclusterer";
+// require('dotenv').config();
 
-const markerCluster = new MarkerClusterer({ map, markers });
+// Read API key from environment variables
+// const apiKey = process.env.API_KEY;
 
-const initMap = () => {
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 3,
-    center: { lat: -28.024, lng: 140.887 },
-  });
-  const infoWindow = new google.maps.InfoWindow({
-    content: "",
-    disableAutoPan: true,
-  });
-  // Create an array of alphabetical characters used to label the markers.
-  const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  // Add some markers to the map.
-  const markers = locations.map((position, i) => {
-    const label = labels[i % labels.length];
-    const marker = new google.maps.Marker({
-      position,
-      label,
-    });
+// // Replace placeholder in HTML with actual API key
+// const html = html.replace('{API_KEY}', apiKey);
 
-    // markers can only be keyboard focusable when they have click listeners
-    // open info window when marker is clicked
-    marker.addListener("click", () => {
-      infoWindow.setContent(label);
-      infoWindow.open(map, marker);
-    });
-    return marker;
-  });
+// import { MarkerClusterer } from "https://cdn.skypack.dev/@googlemaps/markerclusterer@2.0.3";
 
-  // Add a marker clusterer to manage the markers.
-  new MarkerClusterer({ markers, map });
-}
+// const markerCluster = new MarkerClusterer({ map, markers });
 
 const locations = [
   { lat: -31.56391, lng: 147.154312 },
@@ -59,5 +35,67 @@ const locations = [
   { lat: -42.735258, lng: 147.438 },
   { lat: -43.999792, lng: 170.463352 },
 ];
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  const uluru = { lat: -25.344, lng: 131.031 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  for (let marker of locations) {
+    new google.maps.Marker ({
+    position: marker,
+    map: map, 
+  });
+  // const marker = new google.maps.Marker({
+  //   position: uluru,
+  //   map: map,
+  // });
+  // const marker2 = new google.maps.Marker({
+  //   position: { lat: -25.744, lng: 131.231 },
+  //   map: map,
+  // });
+
+}}
 
 window.initMap = initMap;
+
+// const initMap = () => {
+//   console.log("here");
+//   const map = new google.maps.Map(document.getElementById("map"), {
+//     zoom: 3,
+//     center: { lat: -28.024, lng: 140.887 },
+//   });
+//   const infoWindow = new google.maps.InfoWindow({
+//     content: "",
+//     disableAutoPan: true,
+//   });
+//   // Create an array of alphabetical characters used to label the markers.
+//   const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//   // Add some markers to the map.
+//   const markers = locations.map((position, i) => {
+//     const label = labels[i % labels.length];
+//     const marker = new google.maps.Marker({
+//       position,
+//       label,
+//     });
+
+//     // markers can only be keyboard focusable when they have click listeners
+//     // open info window when marker is clicked
+//     marker.addListener("click", () => {
+//       infoWindow.setContent(label);
+//       infoWindow.open(map, marker);
+//     });
+//     return marker;
+//   });
+
+//   // Add a marker clusterer to manage the markers.
+//   new MarkerClusterer({ markers, map });
+// }
+
+
+
+// window.initMap = initMap;
