@@ -109,28 +109,22 @@ button{
   padding: 10px;
 }
 
-.first-map {
-  border: solid black 2em;
-  height: 50px;
-  width: 50px;
+.first-map,
+.second-map,
+.third-map,
+.fourth-map {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.second-map {
-  border: solid black 2em;
+.first-map-picture,
+.second-map-picture,
+.third-map-picture,
+.fourth-map-picture{
+  border: solid #0076bd 2em;
+  background-color: transparent;
   height: 50px;
-  width: 50px;
+  width: 100px;
 }
-.third-map {
-  border: solid black 2em;
-  height: 50px;
-  width: 50px;
-}
-.four-map {
-  border: solid black 2em;
-  height: 50px;
-  width: 50px;
-}
-.five-map {
-  border: solid black 2em;
-  height: 50px;
-  width: 50px;
-}
+
