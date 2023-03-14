@@ -16,11 +16,11 @@ const runSchemaFiles = async () => {
   console.log(chalk.cyan(`-> Loading Schema Files ...`));
   const schemaFilenames = fs.readdirSync('./db/schema');
 
-  for (const fn of schemaFilenames) {
-    const sql = fs.readFileSync(`./db/schema/${fn}`, 'utf8');
-    console.log(`\t-> Running ${chalk.green(fn)}`);
-    await db.query(sql);
-  }
+for (const fn of schemaFilenames) {
+  const sql = fs.readFileSync(`./db/schema/${fn}`, 'utf8');
+  console.log(`\t-> Running ${chalk.green(fn)}`);
+  await db.query(sql);
+}
 };
 
 const runSeedFiles = async () => {
