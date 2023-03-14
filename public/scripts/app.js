@@ -90,8 +90,8 @@ const bounds = new google.maps.LatLngBounds();
         scaledSize: new google.maps.Size(25, 25),
       };
 
-      // initialize an empty array to store marker coordinates
-      let markerCoords = [];
+      // // initialize an empty array to store marker coordinates
+      // let markerCoords = [];
 
       // Create a marker for each place.
       markers.push(
@@ -102,8 +102,8 @@ const bounds = new google.maps.LatLngBounds();
           position: place.geometry.location,
         })
       );
-      // add location coordinates to array everytime a place is searched
-      markerCoords.push(place.geometry.location);
+      // // add location coordinates to array everytime a place is searched
+      // markerCoords.push(place.geometry.location);
 
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
