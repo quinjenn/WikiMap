@@ -22,8 +22,6 @@
   padding: 1;
 }
 
-// test for git push again
-
 .nav-menu li {
   margin-right: 20px;
 }
@@ -68,20 +66,18 @@
 }
 
 #map {
-  height: 290px;
-  width: 100%;
+  height: 295px;
+  width: 1100px;
+  border-radius: 1em;
 }
-
 
 .map-main-container {
   background-color: f2f2ea;
-  height: 300px;
+  height: 325px;
   width: 1100px;
   display: flex;
   flex-direction: row;
   align-items: end;
-  border: solid 4px #0076bd;
-  border-radius: 1em;
 }
 
 .newMap-btn-div {
@@ -91,7 +87,6 @@
   transition: all 0.2 ease-in-out;
   display: flex;
   justify-content: right;
-  padding: 20px;
 }
 
 button{
@@ -105,16 +100,33 @@ button{
   }
 }
 
+.whole-available-map{
+  font-family: 'Abril Fatface', cursive;
+}
+
+.inline-text{
+  margin-inline: 0px;
+  font-size: 12px;
+}
+
+.subheading{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: lighter;
+  margin-top: 0;
+}
+
 .available-map-container {
-  background-color: #f2f2ea;
-  border: solid 4px #0076bd;
+  background-color: transparent;
+  border: solid 3px #0076bd;
   border-radius: 1em;
-  width: 800px;
+  width: 1100px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 10px;
+  padding-top: 25px;
   padding: 10px;
+  margin-top: 10px;
 }
 
 .first-map,
@@ -125,14 +137,27 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 .first-map-picture,
 .second-map-picture,
 .third-map-picture,
 .fourth-map-picture{
-  border: solid #0076bd 2em;
-  background-color: transparent;
-  height: 50px;
-  width: 100px;
+  font-weight: bold;
 }
+
+
+img{
+  width: 190px;
+  height: 150px;
+  border-radius: 30px;
+  opacity: 100%;
+
+  &:hover{
+    opacity: 50%;
+    transition: opacity 2s;
+  }
+}
+
 

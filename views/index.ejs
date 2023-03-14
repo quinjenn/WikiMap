@@ -19,6 +19,11 @@
     <!-- FONT SCRIPT -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap" rel="stylesheet">
+
 
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script type="module" src="/scripts/app.js"></script>
@@ -133,25 +138,36 @@
            </div>
           </div>
           </div>
+          <div class="whole-available-map">
+          <div class="inline-text">
+            <h1>Explore popular cities</h1>
+            <span class="subheading">find the top-rated attractions, eats, and activities.</span>
+          </div>
          <div class="available-map-container">
           <div class="first-map">
             <div class="first-map-picture"></div>
-               <p>Banff </p>
+               <span class="img1">
+                <img src="https://cdn.britannica.com/71/94371-050-293AE931/Mountains-region-Ten-Peaks-Moraine-Lake-Alberta.jpg"></span>
+               <span>Banff</span>
            </div>
            <div class="second-map">
             <div class="second-map-picture"></div>
-              <p>Banff Restaurants</p>
+              <span class="img2"><img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_360,q_65,w_360/v1/clients/vancouverbc/Stanley_Park_Aerial_2_e7b07092-f98f-406a-953b-c350f9a70402.jpg"></span>
+              <span>Vancouver</span>
            </div>
            <div class="third-map">
             <div class="third-map-picture"></div>
-               <p>Jasper Attractions</p>
+                <span class="img3"><img src="https://www.gostudycanada.com/wp-content/uploads/2021/02/iStock-472209533.jpg"></span>
+               <span>Ottawa</span>
            </div>
            <div class="fourth-map">
             <div class="fourth-map-picture"></div>
-               <p>Jasper Restaurants</p>
+               <span class="img4"><img src="https://cdn.britannica.com/93/94493-050-35524FED/Toronto.jpg" alt="Toronto"></span>
+               <span>Toronto</span>
            </div>
          </div>
     </div>
+  </div>
     <script async
         src="https://maps.googleapis.com/maps/api/js?key=<%= process.env.API_KEY %>&callback=initMap&v=weekly"
         defer
