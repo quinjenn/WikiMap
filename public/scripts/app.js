@@ -102,11 +102,10 @@ const bounds = new google.maps.LatLngBounds();
           position: place.geometry.location,
         })
       );
-      const marker1 = position;
-      console.log(position);
-      // push coordinates to array
-      markerCoords.push(place.geometry.location);
-      console.log("markerCoords:", position);
+      // const marker1 = position;
+      // console.log(position);
+      // // push coordinates to array
+      // markerCoords.push(place.geometry.location);
 
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
