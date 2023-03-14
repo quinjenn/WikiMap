@@ -90,6 +90,9 @@ const bounds = new google.maps.LatLngBounds();
         scaledSize: new google.maps.Size(25, 25),
       };
 
+      // initialize an empty array to store marker coordinates
+      let markerCoords = [];
+
       // Create a marker for each place.
       markers.push(
         new google.maps.Marker({
@@ -99,6 +102,12 @@ const bounds = new google.maps.LatLngBounds();
           position: place.geometry.location,
         })
       );
+      const marker1 = position;
+      console.log(position);
+      // push coordinates to array
+      markerCoords.push(place.geometry.location);
+      console.log("markerCoords:", position);
+
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
         bounds.union(place.geometry.viewport);
