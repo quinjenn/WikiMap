@@ -1,15 +1,3 @@
-// require('dotenv').config();
-
-// Read API key from environment variables
-// const apiKey = process.env.API_KEY;
-
-// // Replace placeholder in HTML with actual API key
-// const html = html.replace('{API_KEY}', apiKey);
-
-// import { MarkerClusterer } from "https://cdn.skypack.dev/@googlemaps/markerclusterer@2.0.3";
-
-// const markerCluster = new MarkerClusterer({ map, markers });
-
 const locations = [
   { lat: -31.56391, lng: 147.154312 },
   { lat: -33.718234, lng: 150.363181 },
@@ -35,67 +23,102 @@ const locations = [
   { lat: -42.735258, lng: 147.438 },
   { lat: -43.999792, lng: 170.463352 },
 ];
+let map;
 // Initialize and add the map
 function initMap() {
   // The location of Uluru
   const uluru = { lat: -25.344, lng: 131.031 };
   // The map, centered at Uluru
-  const map = new google.maps.Map(document.getElementById("map"), {
+  map = new google.maps.Map(document.getElementById("map"), {
     zoom: 4,
     center: uluru,
+    // mapTypeId: "roadmap"
   });
+  google.maps.event.addDomListener(window, "load", initAutocomplete);
   // The marker, positioned at Uluru
   for (let marker of locations) {
     new google.maps.Marker ({
-    position: marker,
-    map: map, 
+      position: marker,
+      map: map, 
   });
-  // const marker = new google.maps.Marker({
-  //   position: uluru,
-  //   map: map,
-  // });
-  // const marker2 = new google.maps.Marker({
-  //   position: { lat: -25.744, lng: 131.231 },
-  //   map: map,
-  // });
-
+  
 }}
 
 window.initMap = initMap;
 
-// const initMap = () => {
-//   console.log("here");
-//   const map = new google.maps.Map(document.getElementById("map"), {
-//     zoom: 3,
-//     center: { lat: -28.024, lng: 140.887 },
-//   });
-//   const infoWindow = new google.maps.InfoWindow({
-//     content: "",
-//     disableAutoPan: true,
-//   });
-//   // Create an array of alphabetical characters used to label the markers.
-//   const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//   // Add some markers to the map.
-//   const markers = locations.map((position, i) => {
-//     const label = labels[i % labels.length];
-//     const marker = new google.maps.Marker({
-//       position,
-//       label,
-//     });
 
-//     // markers can only be keyboard focusable when they have click listeners
-//     // open info window when marker is clicked
-//     marker.addListener("click", () => {
-//       infoWindow.setContent(label);
-//       infoWindow.open(map, marker);
-//     });
-//     return marker;
-//   });
+// code for search bar
 
-//   // Add a marker clusterer to manage the markers.
-//   new MarkerClusterer({ markers, map });
-// }
+// This example adds a search box to a map, using the Google Place Autocomplete
+// feature. People can enter geographical searches. The search box will return a
+// pick list containing a mix of places and predicted search terms.
+// This example requires the Places library. Include the libraries=places
+// parameter when you first load the API. For example:
+// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+function initAutocomplete() {
 
+  // Create the search box and link it to the UI element.
+  const input = document.getElementById("pac-input");
+  const searchBox = new google.maps.places.SearchBox(input);
 
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  // Bias the SearchBox results towards current map's viewport.
+  map.addListener("bounds_changed", () => {
+    searchBox.setBounds(map.getBounds());
+  });
 
-// window.initMap = initMap;
+  let markers = [];
+
+  // Listen for the event fired when the user selects a prediction and retrieve
+  // more details for that place.
+  searchBox.addListener("places_changed", () => {
+    const places = searchBox.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+
+    // Clear out the old markers.
+    // markers.forEach((marker) => {
+    //   marker.setMap(null);
+    // });
+    // markers = [];
+
+    // For each place, get the icon, name and location.
+    const bounds = new google.maps.LatLngBounds();
+
+    // places.forEach((place) => {
+    //   if (!place.geometry || !place.geometry.location) {
+    //     console.log("Returned place contains no geometry");
+    //     return;
+    //   }
+
+    //   const icon = {
+    //     url: place.icon,
+    //     size: new google.maps.Size(71, 71),
+    //     origin: new google.maps.Point(0, 0),
+    //     anchor: new google.maps.Point(17, 34),
+    //     scaledSize: new google.maps.Size(25, 25),
+    //   };
+
+      // Create a marker for each place.
+      // markers.push(
+      //   new google.maps.Marker({
+      //     map,
+      //     icon,
+      //     title: place.name,
+      //     position: place.geometry.location,
+      //   })
+      // );
+    //   if (place.geometry.viewport) {
+    //     // Only geocodes have viewport.
+    //     bounds.union(place.geometry.viewport);
+    //   } else {
+    //     bounds.extend(place.geometry.location);
+    //   }
+    // });
+    map.fitBounds(bounds);
+  });
+}
+
+// window.initAutocomplete = initAutocomplete;

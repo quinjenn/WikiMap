@@ -3,11 +3,11 @@
   <head>
     <title>Home Page</title>
     <title>Marker Clustering</title>
-
+    
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
     <link rel="stylesheet" href="/vendor/border-box.css" />
     <link rel="stylesheet" href="/styles/layout.css" />
@@ -26,11 +26,11 @@
 
 
     <script src="/vendor/jquery-3.0.0.js"></script>
-    <script type="module" src="/scripts/app.js"></script>
+    <script type="module" src="/scripts/app.js"></script> 
     <!-- Google Maps script for marker clustering -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <!-- Do I need to put in type="module" here for the gmaps api? -->
-
+    
   </head>
 
 <!--NEW-MAP-MODAL-->
@@ -133,6 +133,13 @@
             <button type="button" class="newMap-btn" data-toggle="modal" data-target="#exampleModal2" data-whatever="@getbootstrap">Create New Map</button>
           </div>
          <div class="map-main-container">
+          <!-- Implement Google search bar -->
+          <input
+            id="pac-input"
+            class="controls"
+            type="text"
+            placeholder="Search Box"
+          />
             <!-- Create a map element for Google Maps -->
            <div id="map">
            </div>
@@ -162,12 +169,10 @@
            </div>
            <div class="fourth-map">
             <div class="fourth-map-picture"></div>
-               <span class="img4"><img src="https://cdn.britannica.com/93/94493-050-35524FED/Toronto.jpg" alt="Toronto"></span>
-               <span>Toronto</span>
+               <p>Jasper Restaurants</p>
            </div>
          </div>
     </div>
-  </div>
     <script async
         src="https://maps.googleapis.com/maps/api/js?key=<%= process.env.API_KEY %>&callback=initMap&v=weekly"
         defer
