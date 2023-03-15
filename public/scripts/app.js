@@ -67,7 +67,7 @@ map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
   // create an empty array outside the searchBox function to hold the marker data
   const markersData = [];
-  
+
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
   searchBox.addListener("places_changed", () => {
@@ -137,3 +137,6 @@ map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 }
 
 window.initAutocomplete = initAutocomplete;
+
+// export markersData array
+module.exports = markersData;
