@@ -16,6 +16,8 @@ app.set('view engine', 'ejs');
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.use(
   '/styles',
   sassMiddleware({
@@ -29,20 +31,19 @@ app.use(express.static('public'));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const userApiRoutes = require('./routes/users-api');
-const widgetApiRoutes = require('./routes/maps-api');
 const usersRoutes = require('./routes/users');
-// // routes for Google Maps Markers object
-// const markerRoutes = require('./routes/markers-routes');
-
+// routes for Google Maps Markers object
+const markerRoutes = require('./routes/markers-routes');
+const mapsRoutes = require('./routes/maps-api');
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
+// // Note: mount other resources here, using the same pattern above
 app.use('/api/users', userApiRoutes);
-app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 // any request with url /api/markers will be handled by markerRoutes router
-// app.use('api/markers', markerRoutes);
-// // Note: mount other resources here, using the same pattern above
+app.use('/api/markers', markerRoutes);
+app.use('/api/maps', mapsRoutes);
 
 // Home page
 // Warning: avoid creating more routes in this file!
