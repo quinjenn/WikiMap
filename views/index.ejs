@@ -50,9 +50,6 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel2">Create New Map</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
       </div>
       <div class="modal-body">
         <form>
@@ -85,9 +82,6 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
       </div>
       <div class="modal-body">
   <div class="container-fluid">
@@ -122,7 +116,7 @@
 </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit</button>
+        <form method="POST"><button action="/my-maps" type="submit" class="btn btn-primary">Submit</button></form>
       </div>
     </div>
   </div>
@@ -134,7 +128,7 @@
            <span class="nav-logo">JNMaps</span>
             <ul class="nav-menu">
               <li><button class="nav-btn1"><i class="fa-solid fa-house"></i></button></li>
-              <li><button type="button" class="nav-btn2" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap"><i class="fa-solid fa-user"></i></button></li>
+              <li><button type="button" class="nav-btn2" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap"><i class="fa-solid fa-user"></i>Profile</button></li>
               <li><button class="nav-btn3"><i class="fa-solid fa-heart"></i></button></li>
             </ul>
           </div>
@@ -240,11 +234,49 @@
   var button = $(event.relatedTarget); // Button that triggered the modal
   var recipient = button.data('whatever'); // Extract info from data-* attributes
   // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  ////// submit buttom is a POST to a database (maps table (psql) endpoint), create endpoint, ajax calls the endpoint from maps data, use a promise
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  var modal = $(this);
+    var modal = $(this);
   modal.find('.modal-title').text('Profile ');
   modal.find('.modal-body input').val(recipient);
 }); </script>
 </body>
 </html>
+
+ <!--NEW-MAP-MODAL-->
+  <!-- // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+// $('#myModal').on('hide.bs.modal', function sendData(data) {
+//     return $.ajax({
+//         url: "/maps",
+//         type: "POST",
+//         data: JSON.stringify(data),
+//         contentType: "application/json",
+//     });
+// sendData(data)
+//     .done(function(response) {
+//         console.log(response);
+//     })
+//     .fail(function(error) {
+//         console.error(error);
+//     });
+//   });
+
+app.post('/maps', (req, res) => {
+  const { name, latitude, longitude } = req.body;
+
+  pool.query(
+    'INSERT INTO maps (name, latitude, longitude) VALUES ($1, $2, $3)',
+    [name, latitude, longitude],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send('Error inserting data into maps table');
+      } else {
+        res.status(200).send('Data inserted successfully');
+      }
+    }
+  );
+}); -->
+
+
+<!--Submit button is a POST to a database (maps table (psql) endpoint), create endpoint, ajax calls the endpoint from maps data, use a promise chain to -->
+
+
