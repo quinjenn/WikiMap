@@ -24,6 +24,8 @@ const locations = [
   { lat: -43.999792, lng: 170.463352 },
 ];
 
+// const fetch = require('node-fetch');
+
 // declare global variable for map
 let map;
 // Initialize and add the map
@@ -37,7 +39,7 @@ function initMap() {
     // mapTypeId: "roadmap"
   });
   google.maps.event.addDomListener(window, "load", initAutocomplete);
-  // The marker, positioned at Uluru
+  // The marker, looping through the locations array
   for (let marker of locations) {
     new google.maps.Marker ({
       position: marker,
@@ -45,6 +47,7 @@ function initMap() {
   });
   
 }}
+
 
 window.initMap = initMap;
 
@@ -63,24 +66,46 @@ map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
     });
 
   let markers = [];
+  
+  // create an empty array outside the searchBox function to hold the marker data
+  let markersData = [];
 
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
   searchBox.addListener("places_changed", () => {
+    // get the places from the search box
     const places = searchBox.getPlaces();
 
+    // if there are not places, exit the function
     if (places.length == 0) {
       return;
     }
 
     // For each place, get the icon, name and location.
-const bounds = new google.maps.LatLngBounds();
+    const bounds = new google.maps.LatLngBounds();
 
+    // loop through each place
     places.forEach((place) => {
+      // check if the place has geometry and location data
       if (!place.geometry || !place.geometry.location) {
         console.log("Returned place contains no geometry");
         return;
       }
+
+      // get the latitude, longitude, and name of the place
+      const lat = place.geometry.location.lat();
+      const lng = place.geometry.location.lng();
+      const name = place.name;
+
+      // add latitude, longitude, and name to the markersData array
+      markersData.push({
+        lat,
+        lng,
+        name,
+      });
+
+      // log current status of markersData
+      console.log("markersData", markersData);
 
       const icon = {
         url: place.icon,
@@ -90,20 +115,17 @@ const bounds = new google.maps.LatLngBounds();
         scaledSize: new google.maps.Size(25, 25),
       };
 
-      // initialize an empty array to store marker coordinates
-      let markerCoords = [];
+     
 
+      // capture the new marker in a marker variable
+      const marker = new google.maps.Marker({
+        map,
+        icon,
+        title: place.name,
+        position: place.geometry.location,
+      })
       // Create a marker for each place.
-      markers.push(
-        new google.maps.Marker({
-          map,
-          icon,
-          title: place.name,
-          position: place.geometry.location,
-        })
-      );
-      // add location coordinates to array everytime a place is searched
-      markerCoords.push(place.geometry.location);
+      markers.push(marker);
 
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
