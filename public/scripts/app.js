@@ -107,6 +107,19 @@ map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
       // log current status of markersData
       console.log("markersData", markersData);
 
+      const mapId = 2;
+
+      let data = {markersData, mapId};
+      // do I send the data to the server side using the Fetch API here? Like with the code below
+      fetch('/api/markers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+        .then(response => response.text())
+        .then(message => console.log(message))
+        .catch(error => console.error(error));
+
       // loop through the markersData array and create HTML elements for each point
       const pointsList = document.getElementById("points-list-ul");
       pointsList.innerHTML = ''; // Clear the list before adding new items
