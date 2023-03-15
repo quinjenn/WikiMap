@@ -107,6 +107,19 @@ map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
       // log current status of markersData
       console.log("markersData", markersData);
 
+      // loop through the markersData array and create HTML elements for each point
+      const pointsList = document.getElementById("points-list-ul");
+      pointsList.innerHTML = ''; // Clear the list before adding new items
+
+
+      markersData.forEach((marker, index) => {
+        const li = document.createElement("li");
+        const span = document.createElement("span");
+        span.innerHTML = `${index + 1}. ${marker.name} (${marker.lat}, ${marker.lng})`;
+        li.appendChild(span);
+        pointsList.appendChild(li);
+      });
+
       const icon = {
         url: place.icon,
         size: new google.maps.Size(71, 71),
