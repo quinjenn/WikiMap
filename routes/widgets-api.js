@@ -28,14 +28,14 @@ router.get('/my.maps', (req, res) => {
 });
 
 
-// POST /my maps
+// POST /my maps *ADD TO DATABASE
 router.post("/my-maps", (req, res) => {
   console.log(req.body);
 
   const name = req.body.name;
   const description = req.body.description;
   const image = req.body.image;
-
+//QUERY TO INSERT TO DATABASE -
   const newMyMap = {
     Name: name,
     Description: description,
@@ -44,6 +44,7 @@ router.post("/my-maps", (req, res) => {
 
   // update maps
   maps[name] = newMyMap;
+  //NEED TO RENDER TO HOMEPAGE, GIVING IT THE OBJECTS
 
   res.send("my maps was created!");
 });
