@@ -31,8 +31,8 @@ app.use(express.static('public'));
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
-// routes for Google Maps Markers object
-const markerRoutes = require('./routes/markers-routes');
+// // routes for Google Maps Markers object
+// const markerRoutes = require('./routes/markers-routes');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -41,8 +41,8 @@ app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 // any request with url /api/markers will be handled by markerRoutes router
-app.use('api/markers', markerRoutes);
-// Note: mount other resources here, using the same pattern above
+// app.use('api/markers', markerRoutes);
+// // Note: mount other resources here, using the same pattern above
 
 // Home page
 // Warning: avoid creating more routes in this file!
