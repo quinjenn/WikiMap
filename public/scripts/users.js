@@ -20,7 +20,7 @@ $(document).ready(function() {
   const myMapsInfo = function() {
     $.ajax({
       method: "GET",
-      url: "/my-maps",
+      url: "/",
       success: (maps) => {
         for (const property of maps) {
           const $propertyElement = createPropertyElement(property);
@@ -43,7 +43,7 @@ $(document).ready(function() {
     // make an AJAX post request
     $.ajax({
       method: "POST",
-      url: "/my-maps",
+      url: "/",
       data: urlencoded,
       success: (response) => {
         myMapsInfo();
@@ -54,14 +54,23 @@ $(document).ready(function() {
 });
 
 //CREATE NEW FUNCTION FOR HTML MY-MAPS OBJECT
-
-const mapsSQL = {
+let mapsSQL = {
   map_id: {
     title: "",
     description: "",
     image_url: "",
+    user_id: 8,
   }
 };
+
+fetch('/api/maps', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(mapsSQL),
+})
+  .then(response => response.text())
+  .then(message => console.log(message))
+  .catch(error => console.error(error));
 
 const createMapFormElement = function(maps) {
   return $(`
@@ -74,7 +83,7 @@ const createMapFormElement = function(maps) {
           <label for="map-image">Image: ${maps.map_id.image_url}</label>
         </div>
         <div class="points-list">
-          <form action="/my-maps" method="POST" id="create-map-form">
+          <form action="/" method="POST" id="create-map-form">
             <div>Point list:</div>
             <span>${locations[lat,lng]}</span>
             <button type="submit" class="edit-btn">Edit</button>
@@ -86,5 +95,7 @@ const createMapFormElement = function(maps) {
 </section>
 `);
 };
+
+
 
 

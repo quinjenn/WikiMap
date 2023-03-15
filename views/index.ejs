@@ -52,9 +52,9 @@
         <h5 class="modal-title" id="exampleModalLabel2">Create New Map</h5>
       </div>
       <div class="modal-body">
-        <form>
+        <form action="/" method="POST">
           <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Name:</label>
+            <label for="recipient-name" class="col-form-label">Title:</label>
             <input type="text" class="form-control" id="recipient-name">
           </div>
           <div class="form-group">
@@ -63,7 +63,7 @@
           </div>
            <div class="form-group">
             <label for="message-text" class="col-form-label">Image:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <input class="form-control" id="message-text"/>
           </div>
         </form>
       </div>
@@ -116,8 +116,7 @@
 </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <form method="POST"><button action="/my-maps" type="submit" class="btn btn-primary">Submit</button></form>
-      </div>
+]      </div>
     </div>
   </div>
 </div>
@@ -141,9 +140,9 @@
             <section id="map-points-container">
               <div class="map-info">
                 <div class="map-name">
-                      <form action="/my-maps" method="POST" id="create-map-form">
+                      <form action="/" method="POST" id="create-map-form">
                         <div class="map-properties">
-                          <label for="map-name-text">Name:</label>
+                          <label for="map-name-text">Title:</label>
                           <label for="description-text">Description:</label>
                           <label for="map-image">Image:</label>
                         </div>
@@ -234,8 +233,41 @@
    <script>$('#exampleModal').on('show.bs.modal', function(event) {
   var button = $(event.relatedTarget); // Button that triggered the modal
   var recipient = button.data('whatever'); // Extract info from data-* attributes
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
   // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    var modal = $(this);
+//    $('#myModal').on('hidden.bs.modal', function sendData(data) {
+//      return $.ajax({
+//          url: "/",
+//          type: "POST",
+//          data: JSON.stringify(data),
+//          contentType: "application/json",
+//      });
+//  sendData(data)
+//      .done(function(response) {
+//          console.log(response);
+//      })
+//      .fail(function(error) {
+//          console.error(error);
+//      });
+//    });
+
+// app.post('/', (req, res) => {
+//   const { title, description, image_url, user_id } = req.body;
+
+//   db.query(
+//     'INSERT INTO maps (title, description, image_url, user_id) VALUES ($1, $2, $3, $4)',
+//     [title, description, image_url, user_id],
+//     (err, result) => {
+//       if (err) {
+//         console.error(err);
+//         res.status(500).send('Error inserting data into maps table');
+//       } else {
+//         res.status(200).send('Data inserted successfully');
+//       }
+//     }
+//   );
+// });
+  var modal = $(this);
   modal.find('.modal-title').text('Profile ');
   modal.find('.modal-body input').val(recipient);
 }); </script>
@@ -246,41 +278,9 @@
 </html>
 
  <!--NEW-MAP-MODAL-->
-  <!-- // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-// $('#myModal').on('hide.bs.modal', function sendData(data) {
-//     return $.ajax({
-//         url: "/maps",
-//         type: "POST",
-//         data: JSON.stringify(data),
-//         contentType: "application/json",
-//     });
-// sendData(data)
-//     .done(function(response) {
-//         console.log(response);
-//     })
-//     .fail(function(error) {
-//         console.error(error);
-//     });
-//   });
-
-app.post('/maps', (req, res) => {
-  const { name, latitude, longitude } = req.body;
-
-  pool.query(
-    'INSERT INTO maps (name, latitude, longitude) VALUES ($1, $2, $3)',
-    [name, latitude, longitude],
-    (err, result) => {
-      if (err) {
-        console.error(err);
-        res.status(500).send('Error inserting data into maps table');
-      } else {
-        res.status(200).send('Data inserted successfully');
-      }
-    }
-  );
-}); -->
+  <!-- // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.-->
 
 
-<!--Submit button is a POST to a database (maps table (psql) endpoint), create endpoint, ajax calls the endpoint from maps data, use a promise chain to -->
+
 
 
