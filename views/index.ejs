@@ -133,15 +133,35 @@
          <div class="nav-bar">
            <span class="nav-logo">JNMaps</span>
             <ul class="nav-menu">
-              <li><button class="nav-btn1"><i class="fa-solid fa-house"></i>Homepage</button></li>
-              <li><button type="button" class="nav-btn2" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap"><i class="fa-solid fa-user"></i>Profile</button></li>
-              <li><button class="nav-btn3"><i class="fa-solid fa-heart"></i>Favourites</button></li>
+              <li><button class="nav-btn1"><i class="fa-solid fa-house"></i></button></li>
+              <li><button type="button" class="nav-btn2" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap"><i class="fa-solid fa-user"></i></button></li>
+              <li><button class="nav-btn3"><i class="fa-solid fa-heart"></i></button></li>
             </ul>
           </div>
           <div class="map-whole-div">
-          <div class="newMap-btn-div">
+           <div class="newMap-btn-div">
             <button type="button" class="newMap-btn" data-toggle="modal" data-target="#exampleModal2" data-whatever="@getbootstrap">Create New Map</button>
-          </div>
+            </div>
+
+             <!-- Implment map point div  -->
+            <section id="map-points-container">
+              <div class="map-info">
+                <div class="map-name">
+                      <form action="/my-maps" method="POST" id="create-map-form">
+                        <div class="map-properties">
+                          <label for="map-name-text">Name:</label>
+                          <label for="description-text">Description:</label>
+                          <label for="map-image">Image:</label>
+                        </div>
+                        <div class="points-list">
+                          <span>Point list:</span>
+                          <button type="submit" class="edit-btn">Edit</button>
+                          <button type="submit" class="delete-btn">Delete</button>
+                        </div>
+                      </form>
+                </div>
+              </div>
+            </section>
          <div class="map-main-container">
           <!-- Implement Google search bar -->
           <input
@@ -184,6 +204,7 @@
          </div>
     </div>
   </div>
+
     <!--SCRIPTS-->
     <script
         src="https://maps.googleapis.com/maps/api/js?key=<%= process.env.API_KEY %>&libraries=places&callback=initMap&v=weekly"

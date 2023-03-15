@@ -29,8 +29,9 @@
 .nav-btn1,
 .nav-btn2,
 .nav-btn3 {
+  border-color: #0076bd;
   border: none;
-  background-color: #0076bd;
+  background-color: transparent;
   color: #fff;
   cursor: pointer;
   transition: all 0.2 ease-in-out;
@@ -46,23 +47,23 @@
 
 .nav-btn1 {
   padding: 8px 16px;
+  border-color: green;
   border-radius: 20px;
-  background-color: #0076bd;
-  color: #333;
+  color: #0076bd;
 }
 
 .nav-btn2 {
   padding: 8px 16px;
+  border-color: green;
   border-radius: 20px;
-  background-color: #0076bd;
-  color: #333;
+  color: #0076bd;
 }
 
 .nav-btn3 {
   padding: 8px 16px;
+  border-color: green;
   border-radius: 20px;
-  background-color: #0076bd;
-  color: #333;
+  color: #0076bd;
 }
 
 #map {
@@ -89,16 +90,19 @@
   justify-content: right;
 }
 
-button{
-  border: none;
+.newMap-btn{
+  border: solid 1px;
+  border-color: green;
   padding: 8px 16px;
   border-radius: 20px;
-  background-color: #0076bd;
-  color: #333;
+  background-color: transparent;
+  color: #0c649b;
   &:hover {
     background-color: green;
   }
 }
+// .edit-btn{
+// }
 
 .whole-available-map{
   font-family: 'Abril Fatface', cursive;
@@ -148,7 +152,10 @@ button{
 }
 
 
-.img1, .img2, .img3, .img4{
+.img1,
+.img2,
+.img3,
+.img4{
   width: 190px;
   height: 150px;
   border-radius: 30px;
