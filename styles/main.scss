@@ -167,3 +167,34 @@
   }
 }
 
+#profile-user-avatar{
+  width: 100px;
+  height: 100px;
+}
+
+#profile-img{
+  width: 100px;
+  height: 100px;
+}
+
+#favourites-map-img{
+  width: 100px;
+  height: 100px;
+}
+
+#my-maps-img{
+  width: 100px;
+  height: 100px;
+}
+
+#profile-user-footer{
+  display: flex;
+  flex-direction: row;
+  // justify-content: center;
+}
+
+#user-profile-header{
+  font-family: 'Abril Fatface', cursive;
+  color: green;
+  font-size: 30px;
+}
