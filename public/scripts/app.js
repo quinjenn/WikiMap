@@ -149,7 +149,6 @@ function initAutocomplete() {
       };
 
 
-
       // capture the new marker in a marker variable
       const marker = new google.maps.Marker({
         map,
@@ -170,5 +169,6 @@ function initAutocomplete() {
     map.fitBounds(bounds);
   });
 }
+
 
 window.initAutocomplete = initAutocomplete;
