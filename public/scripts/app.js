@@ -112,7 +112,8 @@ function initAutocomplete() {
         markersData.forEach((marker, index) => {
           const li = document.createElement("li");
           const span = document.createElement("span");
-          span.innerHTML = `${index + 1}. ${marker.name}&nbsp;`;
+          span.innerHTML = `${index + 1}. ${marker.name}`;
+          span.style.marginRight = "5px"; // Add margin to create space
           li.appendChild(span);
 
           const deleteButton = document.createElement('button');
