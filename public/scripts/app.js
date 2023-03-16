@@ -57,6 +57,9 @@ function initAutocomplete() {
     // get the places from the search box
     const places = searchBox.getPlaces();
 
+    // clear the input field
+    input.value = '';
+
     // if there are not places, exit the function
     if (places.length == 0) {
       return;
@@ -136,7 +139,6 @@ function initAutocomplete() {
       }
 
       renderPointsList();
-
 
       const icon = {
         url: place.icon,
