@@ -1,3 +1,4 @@
+/* --------Nav Bar Styling------- */
 .nav-bar {
   display: flex;
   justify-content: space-between;
@@ -66,6 +67,9 @@
   color: #0076bd;
 }
 
+
+
+/* --------Map API Styling------- */
 #map {
   height: 295px;
   width: 1100px;
@@ -101,25 +105,15 @@
     background-color: green;
   }
 }
-// .edit-btn{
-// }
 
 .whole-available-map{
   font-family: 'Abril Fatface', cursive;
 }
 
-.inline-text{
-  margin-inline: 0px;
-  font-size: 12px;
-}
 
-.subheading{
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 18px;
-  font-weight: lighter;
-  margin-top: 0;
-}
 
+
+/* --------Available Map Styling------- */
 .available-map-container {
   background-color: transparent;
   border: solid 3px #0076bd;
@@ -144,6 +138,7 @@
     padding-left: 5px;
     padding-right: 5px;
 }
+
 .first-map-picture,
 .second-map-picture,
 .third-map-picture,
@@ -151,7 +146,6 @@
   font-weight: bold;
   padding-top: 10px;
 }
-
 
 .img1,
 .img2,
@@ -168,6 +162,21 @@
   }
 }
 
+.inline-text{
+  margin-inline: 0px;
+  font-size: 12px;
+}
+.subheading{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: lighter;
+  margin-top: 0;
+}
+
+
+
+
+/* --------Profile Modal Styling------- */
 #profile-user-avatar{
   width: 100px;
   height: 100px;
@@ -200,6 +209,10 @@
   font-size: 30px;
 }
 
+
+
+
+/* --------Favourite Button Styling------- */
 .imagewrap1,
 .imagewrap2,
 .imagewrap3,
@@ -229,5 +242,24 @@
   }
 }
 
+/* --------Profile Modal Styling------- */
+.hide-points {
+  padding: 8px 16px;
+  background-color: transparent;
+  border: transparent;
+  border-radius: 1em;
+  color: #5093bc;
+  margin-right: 10px;
+}
 
-
+.points-list-container {
+  background-color: transparent;
+  border: solid 3px #0076bd;
+  border-radius: 1em;
+  width: 300px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  margin-top: 10px;
+}

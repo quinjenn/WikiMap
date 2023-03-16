@@ -1,6 +1,3 @@
- <!-- RANDOM COMMENT TO TEST/DELETE -->
- <!-- Hello -->
- <!-- most up to date comment -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -127,6 +124,7 @@
 <!---->
  <body>
     <div class="layout-container">
+      <!----------------Nav Div--------------------->
          <div class="nav-bar">
            <span class="nav-logo">JNMaps</span>
             <ul class="nav-menu">
@@ -138,7 +136,9 @@
           <div class="map-whole-div">
            <div class="newMap-btn-div">
             <button type="button" class="newMap-btn" data-toggle="modal" data-target="#exampleModal2" data-whatever="@getbootstrap">Create New Map</button>
-            </div>
+          </div>
+
+        <!----------------Main Map Div--------------------->
          <div class="map-main-container">
           <!-- Implement Google search bar -->
           <input
@@ -151,13 +151,14 @@
               <div id="map"></div>
           </div>
             <!-- Implment map point div  -->
-            <section id="maps-wrapper"></section>
+            <!-- <section id="maps-wrapper"></section>
             <section id="map-points-container">
               <div class="map-info">
                 <div class="map-name">
                       <form action="/" method="POST" id="create-map-form">
                         <div class="map-properties">
                         </div>
+                        <button class="hide-points" onclick="myFunction()">View Markers</button>
                         <div class="points-list">
                           <ul id="points-list-ul"></ul>
                         </div>
@@ -165,8 +166,26 @@
                 </div>
               </div>
             </section>
+          </div> -->
+        <!-- Implement map point div -->
+<section id="maps-wrapper"></section>
+<section id="map-points-container">
+  <div class="map-info">
+    <div class="map-name">
+      <form id="create-map-form">
+        <div class="map-properties">
+        </div>
+        <button class="hide-points" type="button" onclick="togglePointsList()">View Markers</button>
+        <div class="points-list-container">
+          <ul id="points-list-ul"></ul>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 
-          </div>
+
+          <!----------------Available Map Div--------------------->
           <div class="whole-available-map">
           <div class="inline-text">
             <h1>Explore popular maps</h1>
@@ -233,6 +252,8 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+
+
       <!--CREATE-NEW MAP--GRID-->
     <!-- Custom Script and jQuery goes over here -->
     <script language="javascript">
