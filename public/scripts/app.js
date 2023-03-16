@@ -16,17 +16,18 @@ function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 4,
     center: calgary,
-   
+
   });
   google.maps.event.addDomListener(window, "load", initAutocomplete);
   // The marker, looping through the locations array
   for (let marker of locations) {
-    new google.maps.Marker ({
+    new google.maps.Marker({
       position: marker,
-      map: map, 
-  });
-  
-}}
+      map: map,
+    });
+
+  }
+}
 
 
 window.initMap = initMap;
@@ -36,17 +37,17 @@ window.initMap = initMap;
 function initAutocomplete() {
 
   // Create the search box and link it to the UI element.
-const input = document.getElementById("pac-input");
-const searchBox = new google.maps.places.SearchBox(input);
+  const input = document.getElementById("pac-input");
+  const searchBox = new google.maps.places.SearchBox(input);
 
-map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-    // Bias the SearchBox results towards current map's viewport.
-    map.addListener("bounds_changed", () => {
-      searchBox.setBounds(map.getBounds());
-    });
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  // Bias the SearchBox results towards current map's viewport.
+  map.addListener("bounds_changed", () => {
+    searchBox.setBounds(map.getBounds());
+  });
 
   let markers = [];
-  
+
   // create an empty array outside the searchBox function to hold the marker data
   let markersData = [];
 
@@ -89,7 +90,7 @@ map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
       const mapId = 2;
 
-      let data = {markersData, mapId};
+      let data = { markersData, mapId };
       // do I send the data to the server side using the Fetch API here? Like with the code below
       // convert this to jQuery
       fetch('/api/markers', {
@@ -101,18 +102,38 @@ map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
         .then(message => console.log(message))
         .catch(error => console.error(error));
 
-      // loop through the markersData array and create HTML elements for each point
-      const pointsList = document.getElementById("points-list-ul");
-      pointsList.innerHTML = ''; // Clear the list before adding new items
+
+      function renderPointsList() {
+        // loop through the markersData array and create HTML elements for each point
+        const pointsList = document.getElementById("points-list-ul");
+        pointsList.innerHTML = ''; // Clear the list before adding new items
 
 
-      markersData.forEach((marker, index) => {
-        const li = document.createElement("li");
-        const span = document.createElement("span");
-        span.innerHTML = `${index + 1}. ${marker.name} (${marker.lat}, ${marker.lng})`;
-        li.appendChild(span);
-        pointsList.appendChild(li);
-      });
+        markersData.forEach((marker, index) => {
+          const li = document.createElement("li");
+          const span = document.createElement("span");
+          span.innerHTML = `${index + 1}. ${marker.name}&nbsp;`;
+          li.appendChild(span);
+
+          const deleteButton = document.createElement('button');
+          deleteButton.innerHTML = 'Delete';
+          deleteButton.addEventListener('click', () => {
+            markersData.splice(index, 1);
+            renderPointsList();
+          });
+
+          li.appendChild(deleteButton);
+          pointsList.appendChild(li);
+        });
+
+        for (let i = 0; i < markersData.length; i++) {
+          const listItem = pointsList.children[i];
+          listItem.querySelector('span').innerHTML = `${i + 1}. ${markersData[i].name}`;
+        }
+      }
+
+      renderPointsList();
+
 
       const icon = {
         url: place.icon,
@@ -122,7 +143,7 @@ map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
         scaledSize: new google.maps.Size(25, 25),
       };
 
-     
+
 
       // capture the new marker in a marker variable
       const marker = new google.maps.Marker({
@@ -130,7 +151,7 @@ map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
         icon,
         title: place.name,
         position: place.geometry.location,
-      })
+      });
       // Create a marker for each place.
       markers.push(marker);
 
