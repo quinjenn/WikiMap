@@ -131,11 +131,12 @@
               <li><button class="nav-btn1"><i class="fa-solid fa-house"></i></button></li>
               <li><button type="button" class="nav-btn2" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap"><i class="fa-solid fa-user"></i></button></li>
               <li><button class="nav-btn3"><i class="fa-solid fa-heart"></i></button></li>
+              <li><button class=nav-btn3 onclick="darkMode()"><i class="fa-solid fa-circle-half-stroke"></i></button></li>
             </ul>
           </div>
           <div class="map-whole-div">
            <div class="newMap-btn-div">
-            <button type="button" class="newMap-btn" data-toggle="modal" data-target="#exampleModal2" data-whatever="@getbootstrap">Create New Map</button>
+            <button type="button" id="newMap-btn" data-toggle="modal" data-target="#exampleModal2" data-whatever="@getbootstrap">Create New Map</button>
           </div>
 
         <!----------------Main Map Div--------------------->
@@ -152,20 +153,22 @@
           </div>
 
         <!-- Implement map point div -->
+<button id="hide-points" type="button" onclick="toggleInfoList()"></button>
+<section class="full-info">
 <section id="maps-wrapper"></section>
 <section id="map-points-container">
   <div class="map-info">
     <div class="map-name">
-      <form id="create-map-form">
+      <form action="/" method="POST" id="create-map-form">
         <div class="map-properties">
         </div>
-        <button class="hide-points" type="button" onclick="togglePointsList()">View Markers</button>
-        <div class="points-list-container">
+        <div class="points-list">
           <ul id="points-list-ul"></ul>
         </div>
       </form>
     </div>
   </div>
+</section>
 </section>
           <!----------------Available Map Div--------------------->
           <div class="whole-available-map">

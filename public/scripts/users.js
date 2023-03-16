@@ -15,9 +15,11 @@ $(document).ready(function() {
   <div class="map-info">
     <div class="map-name">
         <div class="map-properties">
-          <label for="map-name-text">Name: ${maps.maps.title}</label>
-          <label for="description-text">Description: ${maps.maps.description}</label>
-          <label for="map-image">Image: ${maps.maps.image_url}</label>
+        <ul>
+        <li><label for="map-name-text"><b>Name:</b> ${maps.maps.title}</label></li>
+        <li><label for="description-text"><b>Description:</b> ${maps.maps.description}</label></li>
+        <li><label for="map-image"><b>Image:</b> ${maps.maps.image_url}</label></li>
+        </ul>
         </div>
         <div class="points-list">
           <form action="/" method="POST" id="create-map-form">
@@ -37,7 +39,7 @@ $(document).ready(function() {
     let map_title = $('#map-title').val();
     let map_description = $('#map-description').val();
     let image_url = $('#image-url').val();
-    let user_id = 5;
+    let user_id = 1;
     let sendData = {
       map_title: map_title,
       map_description: map_description,

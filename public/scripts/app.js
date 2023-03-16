@@ -116,19 +116,21 @@ function initAutocomplete() {
           const li = document.createElement("li");
           const span = document.createElement("span");
           span.innerHTML = `${index + 1}. ${marker.name}`;
-          span.style.marginRight = "5px"; // Add margin to create space
+          span.style.marginRight = "5px";
           li.appendChild(span);
 
           const editButton = document.createElement('button');
           editButton.innerHTML = 'Edit';
           editButton.style.border = 'solid 1.5px';
-          editButton.style.marginLeft = '10px'; // add margin to create space
-          editButton.style.borderColor = 'green';
+          editButton.style.marginLeft = '10px';
+          editButton.style.borderColor = '#0c649b';
           editButton.style.padding = '6px 20px';
           editButton.style.borderRadius = '20px';
           editButton.style.backgroundColor = 'transparent';
           editButton.style.color = '#0c649b';
           editButton.style.marginRight = '2px';
+          editButton.style.margintop = '4px';
+          editButton.style.marginBottom = '4px';
           editButton.addEventListener('click', () => {
             const newName = prompt("Enter the new name for the marker", marker.name);
             if (newName) {
@@ -140,16 +142,18 @@ function initAutocomplete() {
           const deleteButton = document.createElement('button');
           deleteButton.innerHTML = 'Delete';
           deleteButton.style.border = 'solid 1.5px';
-          editButton.style.marginLeft = '0px'; // add margin to create space
+          editButton.style.marginLeft = '0px';
           deleteButton.style.borderColor = 'red';
           deleteButton.style.padding = '6px 20px';
           deleteButton.style.borderRadius = '20px';
           deleteButton.style.backgroundColor = 'transparent';
           deleteButton.style.color = 'red';
+          deleteButton.style.margintop = '4px';
+          deleteButton.style.marginBottom = '4px';
           deleteButton.addEventListener('click', () => {
             markersData.splice(index, 1);
-            markers[index].setMap(null); // remove marker from the map
-            markers.splice(index, 1); // remove marker from the markers array
+            markers[index].setMap(null);
+            markers.splice(index, 1);
             renderPointsList();
           });
 
@@ -163,7 +167,7 @@ function initAutocomplete() {
           const listItem = pointsList.children[i];
           const buttons = listItem.querySelectorAll('button');
   buttons.forEach((button) => {
-    button.style.marginLeft = '2px'; // add margin to create space
+    button.style.marginLeft = '2px';
   });
           listItem.querySelector('span').innerHTML = `${i + 1}. ${markersData[i].name}`;
         }

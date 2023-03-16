@@ -3,7 +3,6 @@ body {
 }
 
 .layout-container {
-  background-color: #f2f2ea;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -13,4 +12,5 @@ body {
   height: 800px;
   font-family: 'Manrope', sans-serif;
   color: black;
+  padding-bottom: 800px;
 }

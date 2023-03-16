@@ -69,6 +69,7 @@
 
 
 
+
 /* --------Map API Styling------- */
 #map {
   height: 295px;
@@ -94,8 +95,8 @@
   justify-content: right;
 }
 
-.newMap-btn{
-  border: solid 1px;
+#newMap-btn{
+  border: solid 2px;
   border-color: green;
   padding: 8px 16px;
   border-radius: 20px;
@@ -109,8 +110,6 @@
 .whole-available-map{
   font-family: 'Abril Fatface', cursive;
 }
-
-
 
 
 /* --------Available Map Styling------- */
@@ -232,29 +231,29 @@
   border-color: green;
   padding: 8px 16px;
   border-radius: 2em;
-  background-color: #f2f2ea;
+  background-color: white;
   font-size: 14px;
   color: rgb(81, 93, 133);
 
   &.focus {
-    background-color: #f2f2ea;
+    background-color: white;
     color: rgb(255, 0, 0);
   }
 }
 
-/* --------Profile Modal Styling------- */
-.hide-points {
+/* --------Points List Styling------- */
+#hide-points {
   padding: 8px 16px;
   background-color: transparent;
   border: transparent;
   border-radius: 1em;
   color: #5093bc;
-  margin-right: 10px;
+  margin-left: -9px;
 }
 
 .points-list-container {
   background-color: transparent;
-  border: solid 3px #0076bd;
+  border: transparent;
   border-radius: 1em;
   width: 300px;
   display: none;
@@ -264,6 +263,10 @@
   margin-top: 10px;
 }
 
+
+
+
+/* --------Search Bar Styling------- */
 .controls {
   background-color: #fff;
   border: none;
@@ -326,4 +329,93 @@
 
 .pac-icon {
   margin-right: 5px;
+}
+
+
+
+
+/* --------Dark Mode Styling------- */
+.dark-mode {
+  background-color: rgb(64, 62, 62);
+  color: white;
+}
+
+layout-container{
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  height: 800px;
+  font-family: 'Manrope', sans-serif;
+  color: rgb(64, 62, 62);
+}
+
+.dark-mode {
+  background-color: rgb(64, 62, 62);
+  color: white;
+
+.fav-button1,
+.fav-button2,
+.fav-button3,
+.fav-button4 {
+  position: absolute;
+  left: 80%;
+  top: -5px;
+  border: solid 2px;
+  border-color: green;
+  padding: 8px 16px;
+  border-radius: 2em;
+  background-color: rgb(64, 62, 62);
+  font-size: 14px;
+  color: rgb(214, 209, 209);
+
+  &.focus {
+    background-color: rgb(64, 62, 62);
+    color: rgb(255, 0, 0);
+  }
+}
+}
+
+
+
+/* --------Dark Mode Styling------- */
+#maps-wrapper{
+  background-color: transparent;
+  border: none;
+  border-radius: 1em;
+  width: auto;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.full-info{
+  background-color: transparent;
+  border: solid 3px #0076bd;
+  border-radius: 1em;
+  width: 1100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+
+
+  label{
+    color: black;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+
+  ol{
+    padding: 10px;
+  }
 }
