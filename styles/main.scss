@@ -330,7 +330,9 @@
 .pac-icon {
   margin-right: 5px;
 }
-// Styling for profile form
+
+
+/* --------Profile Form Styling------- */
 
 #profileModal .modal-body .row:first-child .col-md-4 {
   text-align: center;
@@ -438,9 +440,6 @@
 
 
 
-
-
-
 /* --------Dark Mode Styling------- */
 .dark-mode {
   background-color: rgb(64, 62, 62);
@@ -460,6 +459,7 @@ layout-container{
   color: rgb(64, 62, 62);
 }
 
+// Fave buttons dark mode
 .dark-mode {
   background-color: rgb(64, 62, 62);
   color: white;
@@ -486,9 +486,60 @@ layout-container{
 }
 }
 
+// Profile Modal Dark Mode
+.dark-mode {
+  background-color: rgb(64, 62, 62);
+  color: white;
+
+  #profileModal .modal-body {
+    background-color: rgb(64, 62, 62);
+    color: white;
+  }
+
+  #profileModal .modal-footer {
+    background-color: rgb(64, 62, 62);
+    color: white;
+  }
+  .title {
+    color: white;
+  }
+
+  .subtitle {
+    color: white;
+  }
+}
+
+// Create New Map Modal Dark Mode
+.dark-mode {
+  background-color: rgb(64, 62, 62);
+  color: white;
+
+  #exampleModal2 .modal-body {
+    background-color: rgb(64, 62, 62);
+    color: white;
+  }
+
+  #exampleModal2 .modal-footer {
+    background-color: rgb(64, 62, 62);
+    color: white;
+  }
+
+  #exampleModal2 .modal-header {
+    background-color: rgb(64, 62, 62);
+    color: white;
+  }
+  .title {
+    color: white;
+  }
+
+  .subtitle {
+    color: white;
+  }
+}
 
 
-/* --------Dark Mode Styling------- */
+
+/* --------Map Info Div Styling------- */
 #maps-wrapper{
   background-color: transparent;
   border: none;
