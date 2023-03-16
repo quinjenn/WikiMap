@@ -39,6 +39,7 @@
     <!-- External JS -->
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script src="/scripts/users.js"></script>
+    <script src="/scripts/helpers.js"></script>
     <script type="module" src="/scripts/app.js"></script>
     <!-- Google Maps script for marker clustering -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
@@ -168,29 +169,41 @@
           </div>
           <div class="whole-available-map">
           <div class="inline-text">
-            <h1>Explore popular cities</h1>
-            <span class="subheading">find the top-rated attractions, eats, and activities.</span>
+            <h1>Explore popular maps</h1>
+            <span class="subheading">find the top-rated attractions, eats, and activities in any city.</span>
           </div>
          <div class="available-map-container">
           <div class="first-map">
             <div class="first-map-picture"></div>
-               <img class="img1" src="https://cdn.britannica.com/71/94371-050-293AE931/Mountains-region-Ten-Peaks-Moraine-Lake-Alberta.jpg">
-               <span>Banff</span>
+            <div class="imagewrap1">
+              <img class="img1" src="https://cdn.britannica.com/71/94371-050-293AE931/Mountains-region-Ten-Peaks-Moraine-Lake-Alberta.jpg">
+              <button type="button" class="fav-button1" onclick="toggleFocus(this)"><i class="fa-solid fa-heart"></i></button>
+            </div>
+               <span>Banff Hiking Spots</span>
            </div>
            <div class="second-map">
             <div class="second-map-picture"></div>
+            <div class="imagewrap2">
               <img class="img2" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_360,q_65,w_360/v1/clients/vancouverbc/Stanley_Park_Aerial_2_e7b07092-f98f-406a-953b-c350f9a70402.jpg">
-              <span>Vancouver</span>
+              <button type="button" class="fav-button2" onclick="toggleFocus(this)"><i class="fa-solid fa-heart"></i></button>
+            </div>
+              <span>Vancouver Live Music</span>
            </div>
            <div class="third-map">
             <div class="third-map-picture"></div>
-                <img class="img3" src="https://www.gostudycanada.com/wp-content/uploads/2021/02/iStock-472209533.jpg">
-               <span>Ottawa</span>
+            <div class="imagewrap3">
+              <img class="img3" src="https://www.gostudycanada.com/wp-content/uploads/2021/02/iStock-472209533.jpg">
+              <button type="button" class="fav-button3" onclick="toggleFocus(this)"><i class="fa-solid fa-heart"></i></button>
+            </div>
+            <span>Ottawa Restaurants</span>
            </div>
            <div class="fourth-map">
             <div class="fourth-map-picture"></div>
-               <img class="img4" src="https://cdn.britannica.com/93/94493-050-35524FED/Toronto.jpg" alt="Toronto">
-               <span>Toronto</span>
+            <div class="imagewrap4">
+              <img class="img4" src="https://cdn.britannica.com/93/94493-050-35524FED/Toronto.jpg" alt="Toronto">
+              <button type="button" class="fav-button4" onclick="toggleFocus(this)"><i class="fa-solid fa-heart"></i></button>
+            </div>
+               <span>Toronto Coffee Shops</span>
            </div>
          </div>
     </div>

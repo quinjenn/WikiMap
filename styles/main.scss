@@ -129,7 +129,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding-top: 25px;
-  padding: 10px;
+  padding: 15px;
   margin-top: 10px;
 }
 
@@ -149,6 +149,7 @@
 .third-map-picture,
 .fourth-map-picture{
   font-weight: bold;
+  padding-top: 10px;
 }
 
 
@@ -156,7 +157,7 @@
 .img2,
 .img3,
 .img4{
-  width: 190px;
+  width: 195px;
   height: 150px;
   border-radius: 30px;
   opacity: 100%;
@@ -198,3 +199,35 @@
   color: green;
   font-size: 30px;
 }
+
+.imagewrap1,
+.imagewrap2,
+.imagewrap3,
+.imagewrap4 {
+  display: inline-block;
+  position: relative;
+}
+
+.fav-button1,
+.fav-button2,
+.fav-button3,
+.fav-button4 {
+  position: absolute;
+  left: 80%;
+  top: -5px;
+  border: solid 2px;
+  border-color: green;
+  padding: 8px 16px;
+  border-radius: 2em;
+  background-color: #f2f2ea;
+  font-size: 14px;
+  color: rgb(81, 93, 133);
+
+  &.focus {
+    background-color: #f2f2ea;
+    color: rgb(255, 0, 0);
+  }
+}
+
+
+
