@@ -48,7 +48,10 @@ app.use('/api/maps', mapsRoutes);
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-
+app.post("/my-maps", (req, res) => {
+  console.log(req.body);
+  res.send({ result: "Data Received" });
+});
 app.get('/', (req, res) => {
   res.render('index');
 });
