@@ -330,55 +330,6 @@
 .pac-icon {
   margin-right: 5px;
 }
-
-<<<<<<< HEAD
-
-
-
-/* --------Dark Mode Styling------- */
-.dark-mode {
-  background-color: rgb(64, 62, 62);
-  color: white;
-}
-
-layout-container{
-  background-color: white;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  height: 800px;
-  font-family: 'Manrope', sans-serif;
-  color: rgb(64, 62, 62);
-}
-
-.dark-mode {
-  background-color: rgb(64, 62, 62);
-  color: white;
-
-.fav-button1,
-.fav-button2,
-.fav-button3,
-.fav-button4 {
-  position: absolute;
-  left: 80%;
-  top: -5px;
-  border: solid 2px;
-  border-color: green;
-  padding: 8px 16px;
-  border-radius: 2em;
-  background-color: rgb(64, 62, 62);
-  font-size: 14px;
-  color: rgb(214, 209, 209);
-
-  &.focus {
-    background-color: rgb(64, 62, 62);
-    color: rgb(255, 0, 0);
-  }
-}
-=======
 // Styling for profile form
 
 #profileModal .modal-body .row:first-child .col-md-4 {
@@ -482,12 +433,61 @@ layout-container{
 .blue-btn {
   background-color: rgb(47, 134, 210) !important;
   color: white;
->>>>>>> 103703910c2adada40ff9baca9769f198a5073d2
 }
 
 
 
-<<<<<<< HEAD
+
+
+
+
+/* --------Dark Mode Styling------- */
+.dark-mode {
+  background-color: rgb(64, 62, 62);
+  color: white;
+}
+
+layout-container{
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  height: 800px;
+  font-family: 'Manrope', sans-serif;
+  color: rgb(64, 62, 62);
+}
+
+.dark-mode {
+  background-color: rgb(64, 62, 62);
+  color: white;
+
+.fav-button1,
+.fav-button2,
+.fav-button3,
+.fav-button4 {
+  position: absolute;
+  left: 80%;
+  top: -5px;
+  border: solid 2px;
+  border-color: green;
+  padding: 8px 16px;
+  border-radius: 2em;
+  background-color: rgb(64, 62, 62);
+  font-size: 14px;
+  color: rgb(214, 209, 209);
+
+  &.focus {
+    background-color: rgb(64, 62, 62);
+    color: rgb(255, 0, 0);
+  }
+}
+}
+
+
+
 /* --------Dark Mode Styling------- */
 #maps-wrapper{
   background-color: transparent;
@@ -526,6 +526,3 @@ layout-container{
     padding: 10px;
   }
 }
-=======
-
->>>>>>> 103703910c2adada40ff9baca9769f198a5073d2
