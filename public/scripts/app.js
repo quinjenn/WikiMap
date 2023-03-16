@@ -2,11 +2,11 @@
 let map;
 
 const locations = [
-  {lat: 51.4253, lng: -116.1776, name: "Lake Louise"},
-  {lat: 51.3271, lng: -116.1818, name: "Moraine Lake"},
-  {lat: 51.3921, lng: -116.2292, name: "Plain of Six Glaciers Trail"},
-  {lat: 51.2369, lng: -115.8398, name: "Johnston Canyon"},
-  {lat: 51.1537, lng: -115.5659, name: "Sulphur Mountain"}
+  {lat: 51.4253, lng: -116.1776, name: "Lake Louise", active: true},
+  {lat: 51.3271, lng: -116.1818, name: "Moraine Lake", active: true},
+  {lat: 51.3921, lng: -116.2292, name: "Plain of Six Glaciers Trail", active: true},
+  {lat: 51.2369, lng: -115.8398, name: "Johnston Canyon", active: true},
+  {lat: 51.1537, lng: -115.5659, name: "Sulphur Mountain", active: true}
 ];
 
 const calgaryAttractions = [
@@ -51,7 +51,9 @@ function initMap() {
     markersData = [];
 
     locations.forEach((location) => {
+      if (location.active) {
       addLocationToMapAndList(location);
+      }
      });
      
     fitBoundsToLocations(locations); 
@@ -244,9 +246,17 @@ function renderPointsList() {
     deleteButton.style.margintop = '4px';
     deleteButton.style.marginBottom = '4px';
     deleteButton.addEventListener('click', () => {
-      markersData.splice(index, 1);
+      markersData[index].active = false;
       markers[index].setMap(null);
       markers.splice(index, 1);
+      markersData.splice(index, 1);
+      // Find the index of the location in the searchedLocations array
+      const searchedLocationIndex = searchedLocations.findIndex(location => location.lat === marker.lat && location.lng === marker.lng);
+
+      // Remove the location from the searchedLocations array
+      if (searchedLocationIndex !== -1) {
+        searchedLocations.splice(searchedLocationIndex, 1);
+      }
       renderPointsList();
     });
 
