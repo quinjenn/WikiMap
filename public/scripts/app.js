@@ -120,6 +120,8 @@ function initAutocomplete() {
           deleteButton.innerHTML = 'Delete';
           deleteButton.addEventListener('click', () => {
             markersData.splice(index, 1);
+            markers[index].setMap(null); // remove marker from the map
+            markers.splice(index, 1); // remove marker from the markers array
             renderPointsList();
           });
 
