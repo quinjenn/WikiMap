@@ -43,6 +43,7 @@
     <!-- Do I need to put in type="module" here for the gmaps api? -->
 
   </head>
+ <body>
 <!--NEW-MAP-MODAL-->
 <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -60,21 +61,19 @@
             <label for="map-description" class="col-form-label">Description:</label>
             <textarea class="form-control" id="map-description"></textarea>
           </div>
-           <div class="form-group">
-            <label for="image-url" class="col-form-label">Image:</label>
-            <input class="form-control" id="image-url"/>
-          </div>
+          Url Image
+          <input type="text" id="image-url" placeholder="Enter Image URL">
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" id="map-submit-btn">Submit</button>
+        <button type="submit" class="btn btn-primary" id="map-submit-btn" data-dismiss="modal">Submit</button>
       </div>
     </div>
   </div>
 </div>
 <!---->
-
+<!-- Profile Modal  -->
 <div class="modal" id="profileModal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -103,7 +102,7 @@
           <div class="col-md-6">
             <h5 class="subtitle">My Maps</h5>
             <ul>
-              <li><a href="#" class="green">Favourite Restaurants in Calgary</a></li>
+              <li><a href="#" class="green">Favourite Calgary Attractions</a></li>
             </ul>
           </div>
         </div>
@@ -114,48 +113,8 @@
     </div>
   </div>
 </div>
-<!--PROFILE-MODAL-GRID-->
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="user-profile-header">Profile</h5>
-      </div> -->
-      <!-- <div class="modal-body">
-      <div class="container-fluid">
-        <div class="row">
-            </br>
-            </br>
-            <div class="col-md-3 ml-auto"><img id="profile-user-avatar" src="https://icon-library.com/images/avatar-icon-free/avatar-icon-free-15.jpg" alt="User Avatar Image"></div>
-            <div class="col-md-4 ml-auto">Map Ninja</div>
-        </div>
-        </br>
-        </br>
-        <div class="row">
-          <div class="col-sm-9">
-            <div class="row">
-              <div class="col-12 col-md-6 text-center">
-                <h4>Favourite Maps</h4>
-                <p><a href="#" class="clickable-text">Banff Hiking Spots</a></p>
-              </div>
-              <div class="col-12 col-md-6 text-center">
-                <h4>My Maps</h4>
-                <img id="my-maps-img" src="https://cdn-icons-png.flaticon.com/512/4797/4797387.png" alt="My Maps Image">
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <form method="POST"><button action="/my-maps" type="submit" class="btn btn-primary">Submit</button></form>
-        </div>
-    </div>
-  </div>
-</div> -->
-<!---->
- <body>
+
+ <!-- <body> -->
     <div class="layout-container">
       <!----------------Nav Div--------------------->
          <div class="nav-bar">
@@ -184,7 +143,6 @@
             <!-- Create a map element for Google Maps -->
               <div id="map"></div>
           </div>
-
         <!-- Implement map point div -->
 <button id="hide-points" type="button" onclick="toggleInfoList()"></button>
 <section class="full-info">
@@ -197,6 +155,7 @@
         </div>
         <div class="points-list">
           <ul id="points-list-ul"></ul>
+          <div id="image-container"></div>
         </div>
       </form>
     </div>
