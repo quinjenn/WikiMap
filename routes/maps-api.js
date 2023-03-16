@@ -6,7 +6,7 @@
  */
 
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 const db = require('../db/connection');
 
 const bodyParser = require("body-parser");
@@ -42,7 +42,9 @@ router.post('/', (req, res) => {
 
   res.send('Maps data inserted successfully');
 });
- 
+
+
+
 
 // let mapsSQL = {
 //   map_id: {
@@ -53,21 +55,22 @@ router.post('/', (req, res) => {
 //   }
 // };
 
-// //GET /my maps
-// router.get('/my.maps', (req, res) => {
-//   const maps = query(`SELECT title, description, image_url FROM maps`);
-//   console.log(maps);
-//   db.query(maps)
-//     .then(data => {
-//       const maps = data.rows;
-//       res.json({ maps });
-//     })
-//     .catch(err => {
-//       res
-//         .status(500)
-//         .json({ error: err.message });
-//     });
-// });
+//GET /my maps
+router.get('/:id', (req, res) => {
+  const maps = 'SELECT title, description, image_url, user_id FROM maps WHERE id = $1';
+  const params = [req.params.id];
+  console.log(maps);
+  db.query(maps, params)
+    .then(data => {
+      const maps = data.rows[0];
+      res.json({ maps });
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+});
 
 
 // // POST /my maps *ADD TO DATABASE

@@ -38,6 +38,7 @@
     />
     <!-- External JS -->
     <script src="/vendor/jquery-3.0.0.js"></script>
+    <script src="/scripts/users.js"></script>
     <script type="module" src="/scripts/app.js"></script>
     <!-- Google Maps script for marker clustering -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
@@ -137,27 +138,6 @@
            <div class="newMap-btn-div">
             <button type="button" class="newMap-btn" data-toggle="modal" data-target="#exampleModal2" data-whatever="@getbootstrap">Create New Map</button>
             </div>
-
-             <!-- Implment map point div  -->
-            <section id="map-points-container">
-              <div class="map-info">
-                <div class="map-name">
-                      <form action="/" method="POST" id="create-map-form">
-                        <div class="map-properties">
-                          <label for="map-name-text">Title:</label>
-                          <label for="description-text">Description:</label>
-                          <label for="map-image">Image:</label>
-                        </div>
-                        <div class="points-list">
-                          <span>Point list:</span>
-                          <ul id="points-list-ul"></ul>
-                          <button type="submit" class="edit-btn">Edit</button>
-                          <button type="submit" class="delete-btn">Delete</button>
-                        </div>
-                      </form>
-                </div>
-              </div>
-            </section>
          <div class="map-main-container">
           <!-- Implement Google search bar -->
           <input
@@ -167,9 +147,24 @@
             placeholder="Search Box"
           />
             <!-- Create a map element for Google Maps -->
-    <div id="map">
-           </div>
+              <div id="map"></div>
           </div>
+            <!-- Implment map point div  -->
+            <section id="maps-wrapper"></section>
+            <section id="map-points-container">
+              <div class="map-info">
+                <div class="map-name">
+                      <form action="/" method="POST" id="create-map-form">
+                        <div class="map-properties">
+                        </div>
+                        <div class="points-list">
+                          <ul id="points-list-ul"></ul>
+                        </div>
+                      </form>
+                </div>
+              </div>
+            </section>
+
           </div>
           <div class="whole-available-map">
           <div class="inline-text">
@@ -228,59 +223,44 @@
       <!--CREATE-NEW MAP--GRID-->
     <!-- Custom Script and jQuery goes over here -->
     <script language="javascript">
-      $(document).ready(function(e){
-        //1. To show the Dialog box for the Creation of new MAP Grid
-        $('#exampleModal2').on('show.bs.modal', function(event) {
-          // var button = $(event.relatedTarget); // Button that triggered the modal
-          // var recipient = button.data('whatever'); // Extract info from data-* attributes
-          // // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-          // // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-          // var modal = $(this);
-          // modal.find('.modal-title').text('Create New Map ');
-          // modal.find('.modal-body input').val(recipient);
-        });
-        $('#map-submit-btn').on('click', function(e){
-          //To get all the values from the controls
-          let map_title =$('#map-title').val();
-          let map_description =$('#map-description').val();
-          let image_url = $('#image-url').val();
-          let user_id = 8;
-          let sendData = {
-            map_title: map_title,
-            map_description: map_description,
-            image_url: image_url,
-            user_id: user_id
-          };
-          //Ajax Call
-          $.ajax({
-            url: "/my-maps",
-            data: sendData,
-            type: "POST",
-            success: function(result){
-              app.post('/', (req, res) => {
-                const { title, description, image_url, user_id } = req.body;
-
-                db.query(
-                  'INSERT INTO maps (title, description, image_url, user_id) VALUES ($1, $2, $3, $4)',
-                  [title, description, image_url, user_id],
-                  (err, result) => {
-                    if (err) {
-                      console.error(err);
-                      res.status(500).send('Error inserting data into maps table');
-                    } else {
-                      res.status(200).send('Data inserted successfully');
-                    }
-                  }
-                );
-              });
-            },
-            error: function (err){
-              console.log("there was an error", err);
-            }
-          })
-        });
-
-      });
+      // $(document).ready(function(e){
+      //   //1. To show the Dialog box for the Creation of new MAP Grid
+      //   $('#exampleModal2').on('show.bs.modal', function(event) {
+      //     // var button = $(event.relatedTarget); // Button that triggered the modal
+      //     // var recipient = button.data('whatever'); // Extract info from data-* attributes
+      //     // // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+      //     // // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+      //     // var modal = $(this);
+      //     // modal.find('.modal-title').text('Create New Map ');
+      //     // modal.find('.modal-body input').val(recipient);
+      //   });
+      //   $('#map-submit-btn').on('click', function(e){
+      //     //To get all the values from the controls
+      //     let map_title =$('#map-title').val();
+      //     let map_description =$('#map-description').val();
+      //     let image_url = $('#image-url').val();
+      //     let user_id = 3;
+      //     let sendData = {
+      //       map_title: map_title,
+      //       map_description: map_description,
+      //       image_url: image_url,
+      //       user_id: user_id
+      //     };
+      //     //Ajax Call
+      //     $.ajax({
+      //       url: "/my-maps",
+      //       data: sendData,
+      //       type: "POST",
+      //       success: function(result){
+      //         $.get("/api/maps/10")
+      //         .done()
+      //       },
+      //       error: function (err){
+      //         console.log("there was an error", err);
+      //       }
+      //     })
+      //   });
+      // });
     </script>
   <!--PROFILE-MODAL-->
    <script>$('#exampleModal').on('show.bs.modal', function(event) {

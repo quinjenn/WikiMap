@@ -28,6 +28,7 @@ app.use(
 );
 app.use(express.static('public'));
 
+const db = require('./db/connection');
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const userApiRoutes = require('./routes/users-api');
@@ -48,10 +49,27 @@ app.use('/api/maps', mapsRoutes);
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
+
 app.post("/my-maps", (req, res) => {
-  console.log(req.body);
-  res.send({ result: "Data Received" });
+  const { map_title, map_description, image_url, user_id } = req.body;
+  console.log("req.body", req.body);
+  db.query(
+    'INSERT INTO maps (title, description, image_url, user_id) VALUES ($1, $2, $3, $4)',
+    [map_title, map_description, image_url, user_id],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send('Error inserting data into maps table');
+      } else {
+        console.log("data inserted");
+        res.status(200).send('Data inserted successfully');
+      }
+    }
+  );
+  // res.send({ result: "Data Received" });
 });
+
+
 app.get('/', (req, res) => {
   res.render('index');
 });

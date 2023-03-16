@@ -1,5 +1,5 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 // write a require here for getting the data from the database
 const db = require('../db/connection');
 
