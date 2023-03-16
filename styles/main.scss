@@ -331,6 +331,7 @@
   margin-right: 5px;
 }
 
+<<<<<<< HEAD
 
 
 
@@ -377,10 +378,116 @@ layout-container{
     color: rgb(255, 0, 0);
   }
 }
+=======
+// Styling for profile form
+
+#profileModal .modal-body .row:first-child .col-md-4 {
+  text-align: center;
+}
+#profileModal .modal-body .row:first-child .col-md-4 img {
+  width: 100%;
+}
+#profileModal .modal-body .row:first-child .col-md-8 .row .col-md-12 {
+  text-align: center;
+  margin-top: 20px;
+}
+#profileModal .modal-body hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+#profileModal .modal-body .row:last-child .col-md-6 h5 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+#profileModal .modal-body .row:last-child .col-md-6 ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  list-style: none;
+}
+#profileModal .modal-body .row:last-child .col-md-6 ul li a {
+  color: #007bff;
+  text-decoration: none;
+}
+#profileModal .modal-body .row:last-child .col-md-6 ul li a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+#profileModal .modal-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.75rem;
+  text-align: right;
+}
+#profileModal .modal-footer button {
+  margin-left: 0.5rem;
+}
+#profileModal .modal-footer button:first-child {
+  margin-left: 0;
+}
+#profileModal .modal-footer .btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+#profileModal .modal-footer .btn-primary:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+#profileModal .modal-footer .btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+#profileModal .modal-footer .btn-secondary:hover {
+  color: #fff;
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+.avatar {
+  width: 175px;
+  height: 175px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 50%;
+}
+
+.title {
+  margin-top: 83px;
+  margin-left: 20px;
+  font-size: 40px;
+  color: #333;
+}
+
+.subtitle {
+  color: #333;
+}
+
+.green-btn {
+  background-color: green !important;
+}
+
+.modal-heading {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 30px;
+  text-align: center;
+  color: green;
+}
+
+.blue-btn {
+  background-color: rgb(47, 134, 210) !important;
+  color: white;
+>>>>>>> 103703910c2adada40ff9baca9769f198a5073d2
 }
 
 
 
+<<<<<<< HEAD
 /* --------Dark Mode Styling------- */
 #maps-wrapper{
   background-color: transparent;
@@ -419,3 +526,6 @@ layout-container{
     padding: 10px;
   }
 }
+=======
+
+>>>>>>> 103703910c2adada40ff9baca9769f198a5073d2
