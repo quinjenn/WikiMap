@@ -57,6 +57,9 @@ function initAutocomplete() {
     // get the places from the search box
     const places = searchBox.getPlaces();
 
+    // clear the input field
+    input.value = '';
+
     // if there are not places, exit the function
     if (places.length == 0) {
       return;
@@ -112,13 +115,16 @@ function initAutocomplete() {
         markersData.forEach((marker, index) => {
           const li = document.createElement("li");
           const span = document.createElement("span");
-          span.innerHTML = `${index + 1}. ${marker.name}&nbsp;`;
+          span.innerHTML = `${index + 1}. ${marker.name}`;
+          span.style.marginRight = "5px"; // Add margin to create space
           li.appendChild(span);
 
           const deleteButton = document.createElement('button');
           deleteButton.innerHTML = 'Delete';
           deleteButton.addEventListener('click', () => {
             markersData.splice(index, 1);
+            markers[index].setMap(null); // remove marker from the map
+            markers.splice(index, 1); // remove marker from the markers array
             renderPointsList();
           });
 
@@ -133,7 +139,6 @@ function initAutocomplete() {
       }
 
       renderPointsList();
-
 
       const icon = {
         url: place.icon,
