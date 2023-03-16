@@ -5,7 +5,7 @@ $(document).ready(function() {
       title: "",
       description: "",
       image_url: "",
-      user_id: 4,
+      user_id: 2,
     }
   };
 
@@ -59,7 +59,7 @@ $(document).ready(function() {
     let map_title = $('#map-title').val();
     let map_description = $('#map-description').val();
     let image_url = $('#image-url').val();
-    let user_id = 1;
+    let user_id = 2;
     let sendData = {
       map_title: map_title,
       map_description: map_description,
@@ -92,7 +92,7 @@ $(document).ready(function() {
   $('#map-submit-btn').on('click', function(e) {
     //To get all the values from the controls
     let map_title = $('#map-title').val();
-    let user_id = 1;
+    let user_id = 2;
     let sendTitle = {
       map_title: map_title,
       user_id: user_id
