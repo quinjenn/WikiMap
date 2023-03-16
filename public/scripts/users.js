@@ -39,7 +39,7 @@ $(document).ready(function() {
     let map_title = $('#map-title').val();
     let map_description = $('#map-description').val();
     let image_url = $('#image-url').val();
-    let user_id = 1;
+    let user_id = 3;
     let sendData = {
       map_title: map_title,
       map_description: map_description,
@@ -52,7 +52,7 @@ $(document).ready(function() {
       data: sendData,
       type: "POST",
       success: function(result) {
-        $.get("/api/maps/10")
+        $.get("/api/maps/18")
           .done((maps) => {
             console.log("maps", maps);
             const testvar = createMapFormElement(maps);
