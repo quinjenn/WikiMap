@@ -18,7 +18,6 @@ $(document).ready(function() {
         <ul>
         <li><label for="map-name-text"><b>Name:</b> ${maps.maps.title}</label></li>
         <li><label for="description-text"><b>Description:</b> ${maps.maps.description}</label></li>
-        <li><label for="map-image"><b>Image:</b> ${maps.maps.image_url}</label></li>
         </ul>
         </div>
         <div class="points-list">
@@ -39,7 +38,7 @@ $(document).ready(function() {
     let map_title = $('#map-title').val();
     let map_description = $('#map-description').val();
     let image_url = $('#image-url').val();
-    let user_id = 3;
+    let user_id = 5;
     let sendData = {
       map_title: map_title,
       map_description: map_description,
@@ -48,16 +47,17 @@ $(document).ready(function() {
     };
     //Ajax Call
     $.ajax({
-      url: "/my-maps",
+      url: "/api/maps",
       data: sendData,
       type: "POST",
       success: function(result) {
-        $.get("/api/maps/18")
-          .done((maps) => {
-            console.log("maps", maps);
-            const testvar = createMapFormElement(maps);
-            $("#maps-wrapper").append(testvar);
-          });
+        console.log("result", result);
+        const mapsWrapper = createMapFormElement(result);
+        $("#maps-wrapper").append(mapsWrapper);
+        var imageUrl = document.getElementById("image-url").value;
+        var image = document.createElement("img");
+        image.src = imageUrl;
+        $("#image-container").append(image);
       },
       error: function(err) {
         console.log("there was an error", err);

@@ -14,29 +14,23 @@ router.use(bodyParser.urlencoded({ extended: true }));
 
 router.post('/', (req, res) => {
   // Get the mapsSQL object from the request body
-  const mapsSQL = req.body.mapsSQL;
-  console.log("req.body:", req.body);
 
-  // loop through the entries of the mapsSQL object
-  for (const [mapId, mapData] of Object.entries(mapsSQL)) {
-    // destructuring the properties
-    const { title, description, image_url, user_id } = mapData;
+  // destructuring the properties
+  const { map_title, map_description, image_url, user_id } = req.body;
 
-    // insert into map table
-    db.query(
-      'INSERT INTO maps (title, description, image_url, user_id) VALUES ($1, $2, $3, $4)',
-      [mapId, title, description, image_url, user_id],
-      (err, result) => {
-        if (err) {
-          console.error(err);
-        } else {
-          console.log(`Map ${mapId} inserted successfully`);
-        }
+  // insert into map table
+  db.query(
+    'INSERT INTO maps (title, description, image_url, user_id) VALUES ($1, $2, $3, $4) RETURNING *',
+    [map_title, map_description, image_url, user_id],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log(`Map ${result.id} inserted successfully`);
+        res.send({ maps: result.rows[0] });
       }
-    );
-  }
-
-  res.send('Maps data inserted successfully');
+    }
+  );
 });
 
 
