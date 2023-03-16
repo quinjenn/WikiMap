@@ -75,14 +75,53 @@
 </div>
 <!---->
 
+<div class="modal" id="profileModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h4 class="modal-heading">Profile</h4>
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <img src="https://placekitten.com/150/150" alt="Avatar" class="avatar">
+          </div>
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <h3 class="title">JNMaps</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="subtitle">Favourite Maps</h5>
+            <ul>
+              <li><a href="#" class="green">Banff Hiking Spots</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5 class="subtitle">My Maps</h5>
+            <ul>
+              <li><a href="#" class="green">Favourite Restaurants in Calgary</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary blue-btn" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <!--PROFILE-MODAL-GRID-->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="user-profile-header">Profile</h5>
-      </div>
-      <div class="modal-body">
+      </div> -->
+      <!-- <div class="modal-body">
       <div class="container-fluid">
         <div class="row">
             </br>
@@ -95,19 +134,13 @@
         <div class="row">
           <div class="col-sm-9">
             <div class="row">
-              </br>
-              <div id="profile-user-footer">
-                <div class="col-1"></div>
-                <div class="col-5">
-                  Favourites Maps
-                  <img id="favourites-map-img" src="https://icon-library.com/images/valentine-icon/valentine-icon-17.jpg" alt="Favourites Image">
-                </div>
-                <div class="col-2"></div>
-                <div class="col-1"></div>
-                <div class="col-3">
-                  My Maps
-                  <img id="my-maps-img" src="https://cdn-icons-png.flaticon.com/512/4797/4797387.png" alt="My Maps Image">
-                </div>
+              <div class="col-12 col-md-6 text-center">
+                <h4>Favourite Maps</h4>
+                <p><a href="#" class="clickable-text">Banff Hiking Spots</a></p>
+              </div>
+              <div class="col-12 col-md-6 text-center">
+                <h4>My Maps</h4>
+                <img id="my-maps-img" src="https://cdn-icons-png.flaticon.com/512/4797/4797387.png" alt="My Maps Image">
               </div>
             </div>
           </div>
@@ -120,7 +153,7 @@
         </div>
     </div>
   </div>
-</div>
+</div> -->
 <!---->
  <body>
     <div class="layout-container">
@@ -129,7 +162,7 @@
            <span class="nav-logo">JNMaps</span>
             <ul class="nav-menu">
               <li><button class="nav-btn1"><i class="fa-solid fa-house"></i></button></li>
-              <li><button type="button" class="nav-btn2" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap"><i class="fa-solid fa-user"></i></button></li>
+              <li><button type="button" class="nav-btn2" data-toggle="modal" data-target="#profileModal" data-whatever="@getbootstrap"><i class="fa-solid fa-user"></i></button></li>
               <li><button class="nav-btn3"><i class="fa-solid fa-heart"></i></button></li>
             </ul>
           </div>
@@ -232,7 +265,7 @@
       <!--CREATE-NEW MAP--GRID-->
     <!-- Custom Script and jQuery goes over here -->
   <!--PROFILE-MODAL-->
-   <script>$('#exampleModal').on('show.bs.modal', function(event) {
+   <script>$('#profileModal').on('show.bs.modal', function(event) {
   var button = $(event.relatedTarget); // Button that triggered the modal
   var recipient = button.data('whatever'); // Extract info from data-* attributes
   // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
