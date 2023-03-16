@@ -119,8 +119,33 @@ function initAutocomplete() {
           span.style.marginRight = "5px"; // Add margin to create space
           li.appendChild(span);
 
+          const editButton = document.createElement('button');
+          editButton.innerHTML = 'Edit';
+          editButton.style.border = 'solid 1.5px';
+          editButton.style.marginLeft = '10px'; // add margin to create space
+          editButton.style.borderColor = 'green';
+          editButton.style.padding = '6px 20px';
+          editButton.style.borderRadius = '20px';
+          editButton.style.backgroundColor = 'transparent';
+          editButton.style.color = '#0c649b';
+          editButton.style.marginRight = '2px';
+          editButton.addEventListener('click', () => {
+            const newName = prompt("Enter the new name for the marker", marker.name);
+            if (newName) {
+              marker.name = newName;
+              renderPointsList();
+            }
+          });
+
           const deleteButton = document.createElement('button');
           deleteButton.innerHTML = 'Delete';
+          deleteButton.style.border = 'solid 1.5px';
+          editButton.style.marginLeft = '0px'; // add margin to create space
+          deleteButton.style.borderColor = 'red';
+          deleteButton.style.padding = '6px 20px';
+          deleteButton.style.borderRadius = '20px';
+          deleteButton.style.backgroundColor = 'transparent';
+          deleteButton.style.color = 'red';
           deleteButton.addEventListener('click', () => {
             markersData.splice(index, 1);
             markers[index].setMap(null); // remove marker from the map
@@ -128,12 +153,18 @@ function initAutocomplete() {
             renderPointsList();
           });
 
+          li.appendChild(editButton);
           li.appendChild(deleteButton);
           pointsList.appendChild(li);
         });
 
+
         for (let i = 0; i < markersData.length; i++) {
           const listItem = pointsList.children[i];
+          const buttons = listItem.querySelectorAll('button');
+  buttons.forEach((button) => {
+    button.style.marginLeft = '2px'; // add margin to create space
+  });
           listItem.querySelector('span').innerHTML = `${i + 1}. ${markersData[i].name}`;
         }
       }

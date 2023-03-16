@@ -1,3 +1,4 @@
+/* --------Nav Bar Styling------- */
 .nav-bar {
   display: flex;
   justify-content: space-between;
@@ -66,6 +67,9 @@
   color: #0076bd;
 }
 
+
+
+/* --------Map API Styling------- */
 #map {
   height: 295px;
   width: 1100px;
@@ -101,25 +105,15 @@
     background-color: green;
   }
 }
-// .edit-btn{
-// }
 
 .whole-available-map{
   font-family: 'Abril Fatface', cursive;
 }
 
-.inline-text{
-  margin-inline: 0px;
-  font-size: 12px;
-}
 
-.subheading{
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 18px;
-  font-weight: lighter;
-  margin-top: 0;
-}
 
+
+/* --------Available Map Styling------- */
 .available-map-container {
   background-color: transparent;
   border: solid 3px #0076bd;
@@ -129,7 +123,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding-top: 25px;
-  padding: 10px;
+  padding: 15px;
   margin-top: 10px;
 }
 
@@ -144,19 +138,20 @@
     padding-left: 5px;
     padding-right: 5px;
 }
+
 .first-map-picture,
 .second-map-picture,
 .third-map-picture,
 .fourth-map-picture{
   font-weight: bold;
+  padding-top: 10px;
 }
-
 
 .img1,
 .img2,
 .img3,
 .img4{
-  width: 190px;
+  width: 195px;
   height: 150px;
   border-radius: 30px;
   opacity: 100%;
@@ -167,6 +162,21 @@
   }
 }
 
+.inline-text{
+  margin-inline: 0px;
+  font-size: 12px;
+}
+.subheading{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: lighter;
+  margin-top: 0;
+}
+
+
+
+
+/* --------Profile Modal Styling------- */
 #profile-user-avatar{
   width: 100px;
   height: 100px;
@@ -197,6 +207,61 @@
   font-family: 'Abril Fatface', cursive;
   color: green;
   font-size: 30px;
+}
+
+
+
+
+/* --------Favourite Button Styling------- */
+.imagewrap1,
+.imagewrap2,
+.imagewrap3,
+.imagewrap4 {
+  display: inline-block;
+  position: relative;
+}
+
+.fav-button1,
+.fav-button2,
+.fav-button3,
+.fav-button4 {
+  position: absolute;
+  left: 80%;
+  top: -5px;
+  border: solid 2px;
+  border-color: green;
+  padding: 8px 16px;
+  border-radius: 2em;
+  background-color: #f2f2ea;
+  font-size: 14px;
+  color: rgb(81, 93, 133);
+
+  &.focus {
+    background-color: #f2f2ea;
+    color: rgb(255, 0, 0);
+  }
+}
+
+/* --------Profile Modal Styling------- */
+.hide-points {
+  padding: 8px 16px;
+  background-color: transparent;
+  border: transparent;
+  border-radius: 1em;
+  color: #5093bc;
+  margin-right: 10px;
+}
+
+.points-list-container {
+  background-color: transparent;
+  border: solid 3px #0076bd;
+  border-radius: 1em;
+  width: 300px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  margin-top: 10px;
 }
 
 .controls {
