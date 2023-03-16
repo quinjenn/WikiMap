@@ -1,59 +1,4 @@
-// Client facing scripts here
-// $(() => {
-//   $('#fetch-users').on('click', () => {
-//     $.ajax({
-//       method: 'GET',
-//       url: '/api/users'
-//     })
-//     .done((response) => {
-//       const $usersList = $('#users');
-//       $usersList.empty();
-
-//       for(const user of response.users) {
-//         $(`<li class="user">`).text(user.name).appendTo($usersList);
-//       }
-//     });
-//   });
-// });
-
 $(document).ready(function() {
-  // const myMapsInfo = function() {
-  //   $.ajax({
-  //     method: "GET",
-  //     url: "/",
-  //     success: (maps) => {
-  //       for (const property of maps) {
-  //         const $propertyElement = createPropertyElement(property);
-  //         $map - points - container.prepend($propertyElement);
-  //       }
-  //     },
-  //   });
-  // };
-
-  // myMapsInfo();
-
-  // const $mapForm = $(".create-map-form");
-  // $mapForm.on("submit", (event) => {
-  //   // prevent the default behaviour of browser
-  //   event.preventDefault();
-  //   // get the data from the form
-  //   // add form validation
-  //   // urlencode the data
-  //   const urlencoded = $mapForm.serialize();
-  //   // make an AJAX post request
-  //   $.ajax({
-  //     method: "POST",
-  //     url: "/",
-  //     data: urlencoded,
-  //     success: (response) => {
-  //       myMapsInfo();
-  //     },
-  //   });
-
-  // });
-
-
-
   //CREATE NEW FUNCTION FOR HTML MY-MAPS OBJECT
   let mapsSQL = {
     map_id: {
@@ -63,15 +8,6 @@ $(document).ready(function() {
       user_id: 4,
     }
   };
-
-  // fetch('/api/maps', {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify(mapsSQL),
-  // })
-  //   .then(response => response.text())
-  //   .then(message => console.log(message))
-  //   .catch(error => console.error(error));
 
   const createMapFormElement = function(maps) {
     console.log("maps", maps);
@@ -94,13 +30,6 @@ $(document).ready(function() {
 
   //1. To show the Dialog box for the Creation of new MAP Grid
   $('#exampleModal2').on('show.bs.modal', function(event) {
-    // var button = $(event.relatedTarget); // Button that triggered the modal
-    // var recipient = button.data('whatever'); // Extract info from data-* attributes
-    // // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    // // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-    // var modal = $(this);
-    // modal.find('.modal-title').text('Create New Map ');
-    // modal.find('.modal-body input').val(recipient);
   });
   console.log("map-submit-btn", $('#map-submit-btn'));
   $('#map-submit-btn').on('click', function(e) {

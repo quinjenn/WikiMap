@@ -15,10 +15,6 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.post('/', (req, res) => {
   // Get the mapsSQL object from the request body
   const mapsSQL = req.body.mapsSQL;
-  // const title = req.body.title;
-  // const description = req.body.description;
-  // const image = req.body.image_url;
-  // const userId = req.body.user_id;
   console.log("req.body:", req.body);
 
   // loop through the entries of the mapsSQL object
@@ -44,17 +40,6 @@ router.post('/', (req, res) => {
 });
 
 
-
-
-// let mapsSQL = {
-//   map_id: {
-//     title: "",
-//     description: "",
-//     image_url: "",
-//     user_id: 8,
-//   }
-// };
-
 //GET /my maps
 router.get('/:id', (req, res) => {
   const maps = 'SELECT title, description, image_url, user_id FROM maps WHERE id = $1';
@@ -72,26 +57,5 @@ router.get('/:id', (req, res) => {
     });
 });
 
-
-// // POST /my maps *ADD TO DATABASE
-// router.post("/", (req, res) => {
-//   console.log(req.body);
-
-//   const name = req.body.name;
-//   const description = req.body.description;
-//   const image = req.body.image;
-// //QUERY TO INSERT TO DATABASE -
-//   const newMyMap = {
-//     Name: name,
-//     Description: description,
-//     Image: image,
-//   };
-
-//   // update maps
-//   maps[name] = newMyMap;
-//   //NEED TO RENDER TO HOMEPAGE, GIVING IT THE OBJECTS
-
-//   res.send("my maps was created!");
-// });
 
 module.exports = router;
