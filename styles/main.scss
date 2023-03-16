@@ -70,7 +70,7 @@
 
 
 
-/* --------Map API Styling------- */
+/* --------Main Map Div & Map API Styling------- */
 #map {
   height: 295px;
   width: 1100px;
@@ -88,7 +88,6 @@
 
 .newMap-btn-div {
   background-color: transparent;
-  color: #fff;
   cursor: pointer;
   transition: all 0.2 ease-in-out;
   display: flex;
@@ -577,3 +576,4 @@ layout-container{
     padding: 10px;
   }
 }
+
