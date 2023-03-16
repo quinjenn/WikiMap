@@ -17,7 +17,7 @@ const calgaryAttractions = [
   {lat: 51.1139, lng: -114.0889, name: "Nose Hill Park"}
 ];
 
-
+let searchedLocations = [];
 
 function fitBoundsToLocations(locations) {
   const bounds = new google.maps.LatLngBounds();
@@ -69,12 +69,12 @@ function initMap() {
     markersData = [];
 
     // Add Calgary attractions to the map and list
-    calgaryAttractions.forEach(location => {
+    searchedLocations.forEach(location => {
       addLocationToMapAndList(location);
     });
 
     // Pan the map to the general locations of the Calgary attractions
-    fitBoundsToLocations(calgaryAttractions);
+    fitBoundsToLocations(searchedLocations);
   });
   }
 
@@ -125,12 +125,24 @@ function initAutocomplete() {
       const lng = place.geometry.location.lng();
       const name = place.name;
 
+      // // Add the searched location to the calgaryAttractions array
+      // calgaryAttractions = [{ lat, lng, name }];
+
+
+
       // add latitude, longitude, and name to the markersData array
-      markersData.push({
+      searchedLocations.push({
         lat,
         lng,
         name,
       });
+
+          // Add the searched location to the map and list
+        addLocationToMapAndList({
+          lat,
+          lng,
+          name,
+        });
 
       // log current status of markersData
       console.log("markersData", markersData);
@@ -168,6 +180,7 @@ function initAutocomplete() {
       });
       // Create a marker for each place.
       markers.push(marker);
+      renderPointsList();
 
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
