@@ -106,7 +106,7 @@ $(document).ready(function() {
         console.log("result", result);
         const pModalMap = createMapFormElement2(result);
         (console.log("pModalMap"));
-        $("#my-created-maps").append(pModalMap);
+        $("#calgary-attractions-link").append(pModalMap);
       },
       error: function(err) {
         console.log("there was an error", err);
