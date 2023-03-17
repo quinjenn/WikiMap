@@ -1,6 +1,6 @@
 # JNMaps
 
-JNMaps is an interactive web application that allows users to create, view, and modify maps with points of interest. Users can browse available maps, add new points, edit existing points, and favorite maps to personalize their experience. This application is perfect for travelers, explorers, and anyone looking to discover new places.
+JNMaps is an interactive web application that allows users to create, view, and modify maps with points of interest. Perfect for travellers, explorers, and anyone looking to discover new places, JNMaps offers a highly personalized experience with features like browsing available maps, adding new points, editing existing points, and favouriting maps.
 
 ## Contributors 
 
@@ -10,10 +10,11 @@ JNMaps is an interactive web application that allows users to create, view, and 
 
 ## Unique Features
 
-- Dark mode
-- Create custom maps using the Google Maps api
-- Users can edit or delete points from their list (which also deletes automatically from the map)
-- Created and favourited maps are saved to the user's profile
+- **Dark mode**: A sleek and modern interface that reduces eye strain
+- **Custom maps**: Create your own maps using the Google Maps API
+- **Edit and delete points**: Manage points with ease; deleting a point from the list also removes it from the map
+- **Profile management**: Save created and favorited maps to your personal profile for quick access
+Dependencies
 
 ## Dependencies
 
@@ -32,9 +33,11 @@ JNMaps is an interactive web application that allows users to create, view, and 
 
 ## Stretch Features
 
-This project was a collaborative midterm done for the Full-Time Web Development bootcamp in Lighthouse Labs. We were required to make the project in the span of just five days, and because of that, we weren't able to implement as much functionality as we would have liked. Here are some stretch features that could still be added to the map:
+While JNMaps is already a powerful and intuitive application, our development timeline was limited to five days. As a result, there are several additional features that we would like to implement in the future:
 
-- The app currently does not have login/logout functionality (the demo assumes users are already logged in)
-- Be able to share maps with other users
-- See what are the most visited/popular places in a given map
-- See the ratings and other information of a place when I press on a marker
+- **User authentication**: Introduce login and logout functionality, allowing users to securely manage their profiles
+- **Map sharing**: Enable users to share maps with friends or the wider community
+- **Popular places**: Highlight the most visited or popular places within a given map
+- **Rich information display**: Show ratings and other relevant details when a marker is clicked on a map
+
+With these stretch features in place, JNMaps will become an even more impressive and comprehensive solution for users seeking a personalized mapping experience.
