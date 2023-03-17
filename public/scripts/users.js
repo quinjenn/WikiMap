@@ -92,7 +92,7 @@ $(document).ready(function() {
   $('#map-submit-btn').on('click', function(e) {
     //To get all the values from the controls
     let map_title = $('#map-title').val();
-    let user_id = 5;
+    let user_id = 1;
     let sendTitle = {
       map_title: map_title,
       user_id: user_id
