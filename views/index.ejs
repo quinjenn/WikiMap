@@ -79,8 +79,6 @@
   </div>
 </div>
 <!---->
-
-
 <!-- Profile Modal  -->
 <div class="modal" id="profileModal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
@@ -104,13 +102,14 @@
           <div class="col-md-6">
             <h5 class="subtitle">Favourite Maps</h5>
             <ul>
-              <li><a href="#" class="green">Banff Hiking Spots</a></li>
+              <li><a href="#" class="green" id="attractions-link">Banff Hiking Spots</a></li>
             </ul>
           </div>
           <div class="col-md-6">
             <h5 class="subtitle">My Maps</h5>
             <ul>
-              <li><a href="#" class="green">Favourite Calgary Attractions</a></li>
+              <!-- <div id="my-created-maps"></div> -->
+              <div><a href="#" id="calgary-attractions-link"></a></div>
             </ul>
           </div>
         </div>
@@ -257,6 +256,16 @@
 <script>
 
 </script>
+<script>
+  $(document).ready(function() {
+    $('#attractions-link').on('click', function() {
+      $('#profileModal').modal('hide');
+    });
+  });
+</script>
+<script>document.getElementById('map-submit-btn').addEventListener('click', function() {
+  $('#exampleModal2').modal('hide');
+});</script>
 </body>
 </html>
 

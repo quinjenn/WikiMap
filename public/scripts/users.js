@@ -9,27 +9,48 @@ $(document).ready(function() {
     }
   };
 
+  // HELPER FUNCTION - BROWSER MODAL TITLE + DESCRIPTION
   const createMapFormElement = function(maps) {
     console.log("maps", maps);
     return $(`
-  <div class="map-info">
-    <div class="map-name">
-        <div class="map-properties">
-        <ul>
-        <li><label for="map-name-text"><b>Name:</b> ${maps.maps.title}</label></li>
-        <li><label for="description-text"><b>Description:</b> ${maps.maps.description}</label></li>
-        </ul>
-        </div>
-        <div class="points-list">
-          <form action="/" method="POST" id="create-map-form">
-          </form>
-        </div>
+    <div class="map-info">
+      <div class="map-name">
+          <div class="map-properties">
+          <ul>
+          <li><label for="map-name-text"><b>Name:</b> ${maps.maps.title}</label></li>
+          <li><label for="description-text"><b>Description:</b> ${maps.maps.description}</label></li>
+          </ul>
+          </div>
+          <div class="points-list">
+            <form action="/" method="POST" id="create-map-form">
+            </form>
+          </div>
+      </div>
     </div>
-  </div>
-`);
+  `);
   };
 
-  //1. To show the Dialog box for the Creation of new MAP Grid
+  // HELPER FUNCTION - PROFILE MODAL TITLE
+  const createMapFormElement2 = function(maps) {
+    console.log("maps", maps);
+    return $(`
+    <div class="map-info">
+      <div class="map-name">
+          <div class="map-properties">
+          <ul>
+          <li><label for="map-name-text"></b> ${maps.maps.title}</label></li>
+          </ul>
+          </div>
+          <div class="points-list">
+            <form action="/" method="POST" id="create-map-form">
+            </form>
+          </div>
+      </div>
+    </div>
+  `);
+  };
+
+  // BROWSER RENDERING MODAL TITLE + DESCRIPTION
   $('#exampleModal2').on('show.bs.modal', function(event) {
   });
   console.log("map-submit-btn", $('#map-submit-btn'));
@@ -64,4 +85,33 @@ $(document).ready(function() {
       }
     });
   });
+
+  // RENDERING PROFILE MODAL TITLE
+  $('#exampleModal2').on('show.bs.modal', function(event) {
+  });
+  $('#map-submit-btn').on('click', function(e) {
+    //To get all the values from the controls
+    let map_title = $('#map-title').val();
+    let user_id = 5;
+    let sendTitle = {
+      map_title: map_title,
+      user_id: user_id
+    };
+    //Ajax Call
+    $.ajax({
+      url: "/api/maps",
+      data: sendTitle,
+      type: "POST",
+      success: function(result) {
+        console.log("result", result);
+        const pModalMap = createMapFormElement2(result);
+        (console.log("pModalMap"));
+        $("#calgary-attractions-link").append(pModalMap);
+      },
+      error: function(err) {
+        console.log("there was an error", err);
+      }
+    });
+  });
 });
+
