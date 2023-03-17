@@ -1,4 +1,4 @@
-### JNMaps
+# JNMaps
 
 JNMaps is an interactive web application that allows users to create, view, and modify maps with points of interest. Users can browse available maps, add new points, edit existing points, and favorite maps to personalize their experience. This application is perfect for travelers, explorers, and anyone looking to discover new places.
 
