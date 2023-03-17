@@ -38,7 +38,7 @@ $(document).ready(function() {
     let map_title = $('#map-title').val();
     let map_description = $('#map-description').val();
     let image_url = $('#image-url').val();
-    let user_id = 5;
+    let user_id = 1;
     let sendData = {
       map_title: map_title,
       map_description: map_description,

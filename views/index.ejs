@@ -61,8 +61,12 @@
             <label for="map-description" class="col-form-label">Description:</label>
             <textarea class="form-control" id="map-description"></textarea>
           </div>
-          Url Image
+          <div class="form-group">
+          <label for="map-image" class="col-form-label">Image:</label>
+          <br>
           <input type="text" id="image-url" placeholder="Enter Image URL">
+          </br>
+          </div>
         </form>
       </div>
       <div class="modal-footer">
@@ -127,10 +131,14 @@
             </ul>
           </div>
           <div class="map-whole-div">
-           <div class="newMap-btn-div">
+          <div class="newMap-btn-div">
+            <div class="slogan">
+              <span>So, what's the move?</span>
+              </div>
+              <div class="newButton-Div">
             <button type="button" id="newMap-btn" data-toggle="modal" data-target="#exampleModal2" data-whatever="@getbootstrap">Create New Map</button>
+            </div>
           </div>
-
         <!----------------Main Map Div--------------------->
          <div class="map-main-container">
           <!-- Implement Google search bar -->
@@ -144,7 +152,7 @@
               <div id="map"></div>
           </div>
         <!-- Implement map point div -->
-<button id="hide-points" type="button" onclick="toggleInfoList()"></button>
+<button id="hide-points" type="button" onclick="toggleInfoList()">*</button>
 <section class="full-info">
 <section id="maps-wrapper"></section>
 <section id="map-points-container">
@@ -154,8 +162,10 @@
         <div class="map-properties">
         </div>
         <div class="points-list">
-          <ul id="points-list-ul"></ul>
-          <div id="image-container"></div>
+          <div id="image-container-wrapper"><div id="image-container"></div></div>
+          <div id="points-container-wrapper">
+            <label for="points-list">📍<b>Markers:</b></label>
+            <ul id="points-list-ul"></ul></div>
         </div>
       </form>
     </div>
