@@ -584,6 +584,15 @@ layout-container{
   }
 }
 
+.dark-mode {
+  background-color: rgb(64, 62, 62);
+  color: white;
+
+  #newMap-btn{
+    color:white;
+  }
+}
+
 
 /* --------Map Info Div Styling------- */
 #maps-wrapper{
@@ -605,7 +614,7 @@ layout-container{
 }
 
 #points-container-wrapper{
-padding-left: 145px;
+padding-left: 140px;
 }
 
 #image-container-wrapper{
