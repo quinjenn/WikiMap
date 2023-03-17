@@ -15,7 +15,7 @@ JNMaps is an interactive web application that allows users to create, view, and 
 - **Custom maps**: Create your own maps using the Google Maps API
 - **Edit and delete points**: Manage points with ease; deleting a point from the list also removes it from the map
 - **Profile management**: Save created and favorited maps to your personal profile for quick access
-Dependencies
+
 
 ## Dependencies
 
