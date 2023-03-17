@@ -7,9 +7,7 @@ JNMaps is an interactive web application that allows users to create, view, and 
 [Jennifer Quintal](https://github.com/quinjenn) | [Namra Aslam](https://github.com/namraaslam) | [Michael Ocenar](https://github.com/viacaelestis)
 
 ## Demo
-!["Screenshot of home page"](https://github.com/quinjenn/WikiMap/blob/master/docs/homepage2.png)
-!["Screenshot of profile modal"](https://github.com/quinjenn/WikiMap/blob/master/docs/profile-points.png)
-!["Screenshot of points map on home page"](https://github.com/quinjenn/WikiMap/blob/master/docs/points-map.png)
+![gif demo of the whole app](https://cdn.discordapp.com/attachments/1083824983576432714/1086365310375972944/Mar-17-2023_13-07-13.gif)
 
 ## Unique Features
 
