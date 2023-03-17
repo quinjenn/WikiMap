@@ -44,12 +44,14 @@
 
   </head>
  <body>
+
+
 <!--NEW-MAP-MODAL-->
 <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel2">Create New Map</h5>
+        <h2 class="modal-title" id="exampleModalLabel2">Create New Map</h2>
       </div>
       <div class="modal-body">
         <form>
@@ -77,6 +79,8 @@
   </div>
 </div>
 <!---->
+
+
 <!-- Profile Modal  -->
 <div class="modal" id="profileModal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
@@ -113,6 +117,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary blue-btn" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary blue-btn" data-dismiss="modal">Logout</button>
       </div>
     </div>
   </div>
@@ -136,7 +141,7 @@
               <span>So, what's the move?</span>
               </div>
               <div class="newButton-Div">
-            <button type="button" id="newMap-btn" data-toggle="modal" data-target="#exampleModal2" data-whatever="@getbootstrap">Create New Map</button>
+            <button type="button" id="newMap-btn" data-toggle="modal" data-target="#exampleModal2" data-whatever="@getbootstrap"><b>Create New Map</b></button>
             </div>
           </div>
         <!----------------Main Map Div--------------------->
@@ -152,7 +157,7 @@
               <div id="map"></div>
           </div>
         <!-- Implement map point div -->
-<button id="hide-points" type="button" onclick="toggleInfoList()">*</button>
+<button id="hide-points" type="button" onclick="toggleInfoList()">.</button>
 <section class="full-info">
 <section id="maps-wrapper"></section>
 <section id="map-points-container">
@@ -164,7 +169,7 @@
         <div class="points-list">
           <div id="image-container-wrapper"><div id="image-container"></div></div>
           <div id="points-container-wrapper">
-            <label for="points-list">📍<b>Markers:</b></label>
+            <label for="points-list">📍:</label>
             <ul id="points-list-ul"></ul></div>
         </div>
       </form>
