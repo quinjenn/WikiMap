@@ -4,7 +4,7 @@ JNMaps is an interactive web application that allows users to create, view, and 
 
 ## Contributors 
 
-[Jennifer Quintal](https://github.com/quinjenn) | [Namra Aslam](https://github.com/namraaslam) | [Michael Ocenar](https://github.com/viacaelestis)
+[Jennifer Quintal](https://github.com/quinjenn) | [Namra Aslam](https://github.com/namraaslam) | [Michael Ocenar](https://github.com/michaelocenar)
 
 ## Demo
 ![gif demo of the whole app](https://cdn.discordapp.com/attachments/1083824983576432714/1086365310375972944/Mar-17-2023_13-07-13.gif)
